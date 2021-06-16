@@ -6,7 +6,17 @@
     <description>Recent content in Posts on jsj&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Jun 2021 13:16:19 +0530</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Jun 2021 15:41:34 +0530</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup Vim as a Flutter IDE</title>
+      <link>http://localhost:1313/post/vim_flutter_ide/</link>
+      <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
+      
+      <guid>http://localhost:1313/post/vim_flutter_ide/</guid>
+      <description>I recently started using Neovim as my text editor.Also right now I am learning Flutter to create a mobile application for my personal project. So I decided to setup Neovim as a Flutter IDE.With this I can practice Vim with Flutter.
+Install Plugins To setup Neovim as Flutter IDE we need to use coc.nvim plugin .Also for formatting, I am using the dart_vim_plugin.We also need the snippets to be loaded like the ones for stateless/stateful widget.</description>
+    </item>
+    
     <item>
       <title>Hugo with Git Hub Pages on Windows</title>
       <link>http://localhost:1313/post/hugo_githubpages_window/</link>
@@ -14,7 +24,7 @@
       
       <guid>http://localhost:1313/post/hugo_githubpages_window/</guid>
       <description>I created this blog using Hugo and Git Hub Pages on windows.Hugo is a static site generator.Its very fast and written in Go language.Git Hub Pages lets you host the static sites created using Hugo.
-Installing Hugo First install Hugo on windows.I used the chocolate package manager to install Hugo on windows.There are two versions available to install.I installed the extended version as it is required if you plan to customize the themes you will be using.</description>
+Installing Hugo First install Hugo on windows.I used the chocolatey package manager to install Hugo on windows.There are two versions available to install.I installed the extended version as it is required if you plan to customize the themes you will be using.</description>
     </item>
     
     <item>

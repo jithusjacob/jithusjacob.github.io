@@ -14,7 +14,7 @@
       
       <guid>http://localhost:1313/post/hugo_githubpages_window/</guid>
       <description>I created this blog using Hugo and Git Hub Pages on windows.Hugo is a static site generator.Its very fast and written in Go language.Git Hub Pages lets you host the static sites created using Hugo.
-Installing Hugo First install Hugo on windows.I used the chocolate package manager to install Hugo on windows.There are two versions available to install.I installed the extended version as it is required if you plan to customize the themes you will be using.</description>
+Installing Hugo First install Hugo on windows.I used the chocolatey package manager to install Hugo on windows.There are two versions available to install.I installed the extended version as it is required if you plan to customize the themes you will be using.</description>
     </item>
     
   </channel>
