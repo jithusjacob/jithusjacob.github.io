@@ -27,14 +27,14 @@ Install Plugins To setup Neovim as Flutter IDE we need to use coc.nvim plugin .A
     </item>
     
     <item>
-      <title>Neovim_install</title>
+      <title>Install Neovim on Windows</title>
       <link>http://localhost:1313/post/neovim_install/</link>
       <pubDate>Tue, 15 Jun 2021 13:10:20 +0530</pubDate>
       
       <guid>http://localhost:1313/post/neovim_install/</guid>
       <description>I had wanted to use vim as my editor for a long time.So in the lockdown time I gave it a try.I installed NeoVim on windows.Below are the steps for that
-Install Neovim using chocolatey So I use chocolatey package manager for installing different software on windows.I installed the Neovim also using chocolatey with the below command
-1  choco install neovim   Setting up init.vim After installing Neovim .</description>
+Install Neovim using chocolatey So I use chocolatey package manager for installing different software on windows.I installed the Neovim also using chocolatey with the below command. Ensure you use the terminal with Run as administrator.
+1  choco install neovim   Setting up init.</description>
     </item>
     
     <item>
