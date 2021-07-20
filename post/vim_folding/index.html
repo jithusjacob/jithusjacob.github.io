@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="jsj" /><meta name="description" content="I have started using NeoVim as my editor.So I have added lot of configurations in my init.vim file.I keep updating the same when I find some new requirements. So I wanted to manage all the configurations related to NeoVim and its Plugins. I checked various ways and found that folding was one of the methods to do that.Folding is a way of collapsing a group of lines into a single line." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="jsj" /><meta name="description" content="Folding in vim I have started using NeoVim as my editor.So I have added lot of configurations in my init.vim file.I keep updating the same when I find some new requirements. So I wanted to manage all the configurations related to NeoVim and its Plugins. I checked various ways and found that folding was one of the methods to do that.Folding is a way of collapsing a group of lines into a single line." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="Vim folding to arrange NeoVim config file" />
-<meta property="og:description" content="I have started using NeoVim as my editor.So I have added lot of configurations in my init.vim file.I keep updating the same when I find some new requirements. So I wanted to manage all the configurations related to NeoVim and its Plugins. I checked various ways and found that folding was one of the methods to do that.Folding is a way of collapsing a group of lines into a single line." />
+<meta property="og:description" content="Folding in vim I have started using NeoVim as my editor.So I have added lot of configurations in my init.vim file.I keep updating the same when I find some new requirements. So I wanted to manage all the configurations related to NeoVim and its Plugins. I checked various ways and found that folding was one of the methods to do that.Folding is a way of collapsing a group of lines into a single line." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/vim_folding/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-07-19T16:09:06&#43;05:30" />
 <meta property="article:modified_time" content="2021-07-19T16:09:06&#43;05:30" />
 
 <meta itemprop="name" content="Vim folding to arrange NeoVim config file">
-<meta itemprop="description" content="I have started using NeoVim as my editor.So I have added lot of configurations in my init.vim file.I keep updating the same when I find some new requirements. So I wanted to manage all the configurations related to NeoVim and its Plugins. I checked various ways and found that folding was one of the methods to do that.Folding is a way of collapsing a group of lines into a single line."><meta itemprop="datePublished" content="2021-07-19T16:09:06&#43;05:30" />
+<meta itemprop="description" content="Folding in vim I have started using NeoVim as my editor.So I have added lot of configurations in my init.vim file.I keep updating the same when I find some new requirements. So I wanted to manage all the configurations related to NeoVim and its Plugins. I checked various ways and found that folding was one of the methods to do that.Folding is a way of collapsing a group of lines into a single line."><meta itemprop="datePublished" content="2021-07-19T16:09:06&#43;05:30" />
 <meta itemprop="dateModified" content="2021-07-19T16:09:06&#43;05:30" />
-<meta itemprop="wordCount" content="245">
+<meta itemprop="wordCount" content="255">
 <meta itemprop="keywords" content="Vim,Folding,NeoVim," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vim folding to arrange NeoVim config file"/>
-<meta name="twitter:description" content="I have started using NeoVim as my editor.So I have added lot of configurations in my init.vim file.I keep updating the same when I find some new requirements. So I wanted to manage all the configurations related to NeoVim and its Plugins. I checked various ways and found that folding was one of the methods to do that.Folding is a way of collapsing a group of lines into a single line."/>
+<meta name="twitter:description" content="Folding in vim I have started using NeoVim as my editor.So I have added lot of configurations in my init.vim file.I keep updating the same when I find some new requirements. So I wanted to manage all the configurations related to NeoVim and its Plugins. I checked various ways and found that folding was one of the methods to do that.Folding is a way of collapsing a group of lines into a single line."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -145,11 +145,26 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#folding-in-vim">Folding in vim</a></li>
+            <li><a href="#commands-for-folding">Commands for folding</a></li>
+            <li><a href="#saving-folds-in-vim">Saving folds in vim</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>I have started using NeoVim as my editor.So I have added lot of configurations
+      <h3 id="folding-in-vim">Folding in vim</h3>
+<p>I have started using NeoVim as my editor.So I have added lot of configurations
 in my <code>init.vim</code> file.I keep updating the same when I find some new
 requirements. So I wanted to manage all the configurations related to NeoVim and
 its Plugins. I checked various ways and found that folding was one of the
@@ -159,6 +174,7 @@ Also we can perform actions like copy delete on the fold as we do on a single
 line.I am using the manual mode of folding. I will so visual selection and
 create a fold.So I split the <code>init.vim</code> into different sections and created
 the folds for the same. So some the commands I used are as below</p>
+<h3 id="commands-for-folding">Commands for folding</h3>
 <p><code>zf</code> - <strong>Apply fold to the selected lines</strong><br>
 <code>zo</code> - <strong>Open the folded lines</strong><br>
 <code>zc</code> - <strong>Close the open lines back to fold</strong><br>
@@ -166,6 +182,7 @@ the folds for the same. So some the commands I used are as below</p>
 <code>zR</code> - <strong>Open all folds</strong><br>
 <code>zE</code> - <strong>Delete all the folds</strong><br>
 <code>zd</code> - <strong>Delete the fold under the cursor</strong></p>
+<h3 id="saving-folds-in-vim">Saving folds in vim</h3>
 <p>After creating folds.Once you close the buffer,the folds are lost.So to save the
 folds we need to give the below lines in our <code>init.vim</code></p>
 <div class="highlight"><div class="chroma">
