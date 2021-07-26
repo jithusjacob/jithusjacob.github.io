@@ -6,7 +6,61 @@
     <description>Recent content in Tags on jsj&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Jul 2021 16:09:06 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Jul 2021 10:54:57 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clone without folder</title>
+      <link>http://localhost:1313/tags/clone-without-folder/</link>
+      <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/clone-without-folder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>empty repository</title>
+      <link>http://localhost:1313/tags/empty-repository/</link>
+      <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/empty-repository/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/tags/git/</link>
+      <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neovim</title>
+      <link>http://localhost:1313/tags/neovim/</link>
+      <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/neovim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Orphan branch</title>
+      <link>http://localhost:1313/tags/orphan-branch/</link>
+      <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/orphan-branch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
+      <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/windows/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Folding</title>
       <link>http://localhost:1313/tags/folding/</link>
@@ -17,20 +71,20 @@
     </item>
     
     <item>
-      <title>NeoVim</title>
-      <link>http://localhost:1313/tags/neovim/</link>
-      <pubDate>Mon, 19 Jul 2021 16:09:06 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/neovim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Vim</title>
       <link>http://localhost:1313/tags/vim/</link>
       <pubDate>Mon, 19 Jul 2021 16:09:06 +0530</pubDate>
       
       <guid>http://localhost:1313/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coc-nvim</title>
+      <link>http://localhost:1313/tags/coc-nvim/</link>
+      <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/coc-nvim/</guid>
       <description></description>
     </item>
     
@@ -49,15 +103,6 @@
       <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
       
       <guid>http://localhost:1313/tags/ide/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
-      <pubDate>Tue, 15 Jun 2021 13:10:20 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,16 @@
     <description>Recent content in Windows on jsj&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Jun 2021 13:10:20 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Jul 2021 10:54:57 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Storing Dotfiles on git repository using git orphan branches</title>
+      <link>http://localhost:1313/post/dotfiles_using_git_orphan_branches/</link>
+      <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
+      
+      <guid>http://localhost:1313/post/dotfiles_using_git_orphan_branches/</guid>
+      <description>So recently Neovim 0.5 version was released with in built LSP(Language Server Protocol) and Lua language support. So I modifed my init.vim with &amp;lsquo;coc-nvim&amp;rsquo; to init.lua and the in built LSP.I want to save both the config files in GitHub.I googled and found that people have dot files repository where they store all the configuration files.So I decided to follow the same approach.I used the git orphan branches to store different configuration files.</description>
+    </item>
+    
     <item>
       <title>Install Neovim on Windows</title>
       <link>http://localhost:1313/post/neovim_install/</link>

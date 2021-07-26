@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NeoVim on jsj&#39;s blog</title>
+    <title>Neovim on jsj&#39;s blog</title>
     <link>http://localhost:1313/categories/neovim/</link>
-    <description>Recent content in NeoVim on jsj&#39;s blog</description>
+    <description>Recent content in Neovim on jsj&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Jul 2021 16:09:06 +0530</lastBuildDate><atom:link href="http://localhost:1313/categories/neovim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Jul 2021 10:54:57 +0530</lastBuildDate><atom:link href="http://localhost:1313/categories/neovim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Storing Dotfiles on git repository using git orphan branches</title>
+      <link>http://localhost:1313/post/dotfiles_using_git_orphan_branches/</link>
+      <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
+      
+      <guid>http://localhost:1313/post/dotfiles_using_git_orphan_branches/</guid>
+      <description>So recently Neovim 0.5 version was released with in built LSP(Language Server Protocol) and Lua language support. So I modifed my init.vim with &amp;lsquo;coc-nvim&amp;rsquo; to init.lua and the in built LSP.I want to save both the config files in GitHub.I googled and found that people have dot files repository where they store all the configuration files.So I decided to follow the same approach.I used the git orphan branches to store different configuration files.</description>
+    </item>
+    
     <item>
       <title>Vim folding to arrange NeoVim config file</title>
       <link>http://localhost:1313/post/vim_folding/</link>

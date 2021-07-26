@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Setup Vim as a Flutter IDE - jsj&#39;s blog</title>
+  <title>Setup Vim as a Flutter IDE using coc-nvim - jsj&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -40,7 +40,7 @@ Install Plugins To setup Neovim as Flutter IDE we need to use coc.nvim plugin .A
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Setup Vim as a Flutter IDE" />
+<meta property="og:title" content="Setup Vim as a Flutter IDE using coc-nvim" />
 <meta property="og:description" content="I recently started using Neovim as my text editor.Also right now I am learning Flutter to create a mobile application for my personal project. So I decided to setup Neovim as a Flutter IDE.With this I can practice Vim with Flutter.
 Install Plugins To setup Neovim as Flutter IDE we need to use coc.nvim plugin .Also for formatting, I am using the dart_vim_plugin.We also need the snippets to be loaded like the ones for stateless/stateful widget." />
 <meta property="og:type" content="article" />
@@ -48,13 +48,13 @@ Install Plugins To setup Neovim as Flutter IDE we need to use coc.nvim plugin .A
 <meta property="article:published_time" content="2021-06-15T15:41:34&#43;05:30" />
 <meta property="article:modified_time" content="2021-06-15T15:41:34&#43;05:30" />
 
-<meta itemprop="name" content="Setup Vim as a Flutter IDE">
+<meta itemprop="name" content="Setup Vim as a Flutter IDE using coc-nvim">
 <meta itemprop="description" content="I recently started using Neovim as my text editor.Also right now I am learning Flutter to create a mobile application for my personal project. So I decided to setup Neovim as a Flutter IDE.With this I can practice Vim with Flutter.
 Install Plugins To setup Neovim as Flutter IDE we need to use coc.nvim plugin .Also for formatting, I am using the dart_vim_plugin.We also need the snippets to be loaded like the ones for stateless/stateful widget."><meta itemprop="datePublished" content="2021-06-15T15:41:34&#43;05:30" />
 <meta itemprop="dateModified" content="2021-06-15T15:41:34&#43;05:30" />
 <meta itemprop="wordCount" content="724">
-<meta itemprop="keywords" content="Vim,Flutter,IDE," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Setup Vim as a Flutter IDE"/>
+<meta itemprop="keywords" content="Vim,Flutter,IDE,coc-nvim," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup Vim as a Flutter IDE using coc-nvim"/>
 <meta name="twitter:description" content="I recently started using Neovim as my text editor.Also right now I am learning Flutter to create a mobile application for my personal project. So I decided to setup Neovim as a Flutter IDE.With this I can practice Vim with Flutter.
 Install Plugins To setup Neovim as Flutter IDE we need to use coc.nvim plugin .Also for formatting, I am using the dart_vim_plugin.We also need the snippets to be loaded like the ones for stateless/stateful widget."/>
 
@@ -133,7 +133,7 @@ Install Plugins To setup Neovim as Flutter IDE we need to use coc.nvim plugin .A
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Setup Vim as a Flutter IDE</h1>
+      <h1 class="post-title">Setup Vim as a Flutter IDE using coc-nvim</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2021-06-15 </span>
@@ -177,14 +177,14 @@ Install Plugins To setup Neovim as Flutter IDE we need to use coc.nvim plugin .A
   </div>
 </div>
     <div class="post-content">
-      <p>I recently started using Neovim as my text editor.Also right now I am learning Flutter to
-create a mobile application for my personal project. So I decided to setup Neovim as a
+      <p>I recently started using Neovim as my text editor.Also right now I am learning Flutter to 
+create a mobile application for my personal project. So I decided to setup Neovim as a 
 Flutter IDE.With this I can practice Vim with Flutter.</p>
 <h3 id="install-plugins">Install Plugins</h3>
 <p>To setup Neovim as Flutter IDE we need to use <a href="https://github.com/neoclide/coc.nvim">coc.nvim</a>
-plugin .Also for formatting, I am using the
+plugin .Also for formatting, I am using the 
 <a href="https://github.com/dart-lang/dart-vim-plugin">dart_vim_plugin</a>.We also need the snippets to
-be loaded like the ones for stateless/stateful widget.For this we will
+be loaded like the ones for stateless/stateful widget.For this we will 
 use <a href="https://github.com/honza/vim-snippets">honza/vim-snippets</a>.
 So I installed these three plugins using the plugin manager.</p>
 <div class="highlight"><div class="chroma">
@@ -230,7 +230,7 @@ E319: No &ldquo;python3&rdquo; provider found. Run &ldquo;:checkhealth provider&
 </code></pre></td></tr></table>
 </div>
 </div><p>After the install windows was not detecting python. So I installed python from
-with the python installer from
+with the python installer from 
 <a href="https://www.python.org/downloads/windows/">python</a> site.Now windows is
 detecting python.Also I don&rsquo;t get any errors when I open Neovim.</p>
 <h2 id="install-coc-extension">Install Coc extension</h2>
@@ -262,8 +262,8 @@ extension variable.</p>
 <p>Next I will setup Coc key bindings for Flutter</p>
 <h3 id="tab-and-shifttab-key-to-selectchange-selection-and-auto-completion">TAB and SHIFT+TAB key to select,change selection and auto completion.</h3>
 <p>Once all the above setup is completed,we will start getting suggestion whenever we type.
-We bind the TAB key to select option,or next option in the list.While option is selected it
-will auto complete that selection.Auto complete will change as the suggestion selected
+We bind the TAB key to select option,or next option in the list.While option is selected it 
+will auto complete that selection.Auto complete will change as the suggestion selected 
 changes.We will bind the SHIFT+TAB key to go in backward direction.This will only happen for
 suggestions and not for snippets.For snippets auto completion after selection you will need
 to press ENTER key.They key binding is as below.</p>
@@ -321,7 +321,7 @@ endfunction
 
 </code></pre></td></tr></table>
 </div>
-</div><p>So code action can be used like <code>&lt;leader&gt;aap</code> for current paragraph, <code>&lt;leader&gt;aw</code> for the
+</div><p>So code action can be used like <code>&lt;leader&gt;aap</code> for current paragraph, <code>&lt;leader&gt;aw</code> for the 
 current word. My leader key is SPACE.</p>
 <h3 id="format-the-flutter-code-on-saving-and-max-line-length-of-80">Format the Flutter code on Saving and max line length of 80</h3>
 <div class="highlight"><div class="chroma">
@@ -422,6 +422,7 @@ nnoremap &lt;leader&gt;fr :CocCommand flutter.run &lt;CR&gt;
           <a href="/tags/vim/">Vim</a>
           <a href="/tags/flutter/">Flutter</a>
           <a href="/tags/ide/">IDE</a>
+          <a href="/tags/coc-nvim/">coc-nvim</a>
           </div>
       <nav class="post-nav">
         <a class="prev" href="/post/vim_folding/">

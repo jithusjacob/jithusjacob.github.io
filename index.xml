@@ -6,7 +6,7 @@
     <description>Recent content on jsj&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Jul 2021 16:09:06 +0530</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Jul 2021 10:54:57 +0530</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
@@ -14,6 +14,15 @@
       
       <guid>http://localhost:1313/about/</guid>
       <description>I have been planning to write a personal blog for a long time.This is a attempt at that.I have also started a youtube channel along with the blog to show visuals of the stuff I write on the blog and as well get your comments.</description>
+    </item>
+    
+    <item>
+      <title>Storing Dotfiles on git repository using git orphan branches</title>
+      <link>http://localhost:1313/post/dotfiles_using_git_orphan_branches/</link>
+      <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
+      
+      <guid>http://localhost:1313/post/dotfiles_using_git_orphan_branches/</guid>
+      <description>So recently Neovim 0.5 version was released with in built LSP(Language Server Protocol) and Lua language support. So I modifed my init.vim with &amp;lsquo;coc-nvim&amp;rsquo; to init.lua and the in built LSP.I want to save both the config files in GitHub.I googled and found that people have dot files repository where they store all the configuration files.So I decided to follow the same approach.I used the git orphan branches to store different configuration files.</description>
     </item>
     
     <item>
@@ -26,7 +35,7 @@
     </item>
     
     <item>
-      <title>Setup Vim as a Flutter IDE</title>
+      <title>Setup Vim as a Flutter IDE using coc-nvim</title>
       <link>http://localhost:1313/post/vim_flutter_ide/</link>
       <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
       

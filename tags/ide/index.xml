@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Tue, 15 Jun 2021 15:41:34 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/ide/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Setup Vim as a Flutter IDE</title>
+      <title>Setup Vim as a Flutter IDE using coc-nvim</title>
       <link>http://localhost:1313/post/vim_flutter_ide/</link>
       <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
       
