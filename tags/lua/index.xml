@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lua on jsj&#39;s blog</title>
+    <link>http://localhost:1313/tags/lua/</link>
+    <description>Recent content in lua on jsj&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 31 Jul 2021 13:07:21 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/lua/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating Vim binding for checkbox using regex for lua configuration</title>
+      <link>http://localhost:1313/post/vim_checkbox_lua/</link>
+      <pubDate>Sat, 31 Jul 2021 13:07:21 +0530</pubDate>
+      
+      <guid>http://localhost:1313/post/vim_checkbox_lua/</guid>
+      <description>So I have todo list in my vim notes and I wanted to create vim bindings to create checkbox ,close checkbox,open checkbox.I found a article by marcelfischer which had a similar requirement.He had used regex to do so.I decided to do the same for my lua configuration.
+Requirement If there is item with * then we need to add a checkbox
+1 2  * todo item 1 *   will change into</description>
+    </item>
+    
+  </channel>
+</rss>

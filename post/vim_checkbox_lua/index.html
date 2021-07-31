@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Creating Vim binding for checkbox using regex for lua configuration - jsj&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="jsj" /><meta name="description" content="So I have todo list in my vim notes and I wanted to create vim bindings to create checkbox ,close checkbox,open checkbox.I found a article by marcelfischer which had a similar requirement.He had used regex to do so.I decided to do the same for my lua configuration.
+Requirement If there is item with * then we need to add a checkbox
+1 2  * todo item 1 *   will change into" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/vim_checkbox_lua/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b874a8796a492f0d7c86bb24c33cbf052935783a5778ebaf819a8e514bf49f10.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Creating Vim binding for checkbox using regex for lua configuration" />
+<meta property="og:description" content="So I have todo list in my vim notes and I wanted to create vim bindings to create checkbox ,close checkbox,open checkbox.I found a article by marcelfischer which had a similar requirement.He had used regex to do so.I decided to do the same for my lua configuration.
+Requirement If there is item with * then we need to add a checkbox
+1 2  * todo item 1 *   will change into" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/vim_checkbox_lua/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-07-31T13:07:21&#43;05:30" />
+<meta property="article:modified_time" content="2021-07-31T13:07:21&#43;05:30" />
+
+<meta itemprop="name" content="Creating Vim binding for checkbox using regex for lua configuration">
+<meta itemprop="description" content="So I have todo list in my vim notes and I wanted to create vim bindings to create checkbox ,close checkbox,open checkbox.I found a article by marcelfischer which had a similar requirement.He had used regex to do so.I decided to do the same for my lua configuration.
+Requirement If there is item with * then we need to add a checkbox
+1 2  * todo item 1 *   will change into"><meta itemprop="datePublished" content="2021-07-31T13:07:21&#43;05:30" />
+<meta itemprop="dateModified" content="2021-07-31T13:07:21&#43;05:30" />
+<meta itemprop="wordCount" content="307">
+<meta itemprop="keywords" content="Vim,lua,NeoVim,regex," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Creating Vim binding for checkbox using regex for lua configuration"/>
+<meta name="twitter:description" content="So I have todo list in my vim notes and I wanted to create vim bindings to create checkbox ,close checkbox,open checkbox.I found a article by marcelfischer which had a similar requirement.He had used regex to do so.I decided to do the same for my lua configuration.
+Requirement If there is item with * then we need to add a checkbox
+1 2  * todo item 1 *   will change into"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">jsj&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">jsj&#39;s blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Creating Vim binding for checkbox using regex for lua configuration</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-07-31 </span>
+        <div class="post-category">
+            <a href="/categories/vim/"> Vim </a>
+            <a href="/categories/lua/"> lua </a>
+            <a href="/categories/neovim/"> NeoVim </a>
+            <a href="/categories/regex/"> regex </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirement">Requirement</a></li>
+    <li><a href="#regex-for-identifying-the-pattern">Regex for identifying the pattern</a></li>
+    <li><a href="#vim-substitute-command">Vim substitute command</a></li>
+    <li><a href="#keybindings-in-vim-lua-configuration">Keybindings in vim lua configuration</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>So I have todo list in my vim notes and I wanted to create vim bindings to
+create checkbox ,close checkbox,open checkbox.I found a article by
+<a href="https://marcelfischer.eu/blog/2019/checkbox-regex/">marcelfischer</a> which had a
+similar requirement.He had used regex to do so.I decided to do the same for my
+lua configuration.</p>
+<h1 id="requirement">Requirement</h1>
+<p>If there is item with <code>*</code> then we need to add a checkbox</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">* todo item 1
+* 
+</code></pre></td></tr></table>
+</div>
+</div><p>will change into</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+* [ ]todo item 1
+* [ ]
+</code></pre></td></tr></table>
+</div>
+</div><p>If there is checkbox we should be able to close the same</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">* [x]todo item 1
+* [x]
+</code></pre></td></tr></table>
+</div>
+</div><p>Also we should be able to open the closed checkboxes</p>
+<h1 id="regex-for-identifying-the-pattern">Regex for identifying the pattern</h1>
+<p>So the regex to identify <code>* </code> or <code>* [ ]</code> or <code>* [x]</code>will be as below</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">\*\s(\[\s\]|\[x\]|)*
+</code></pre></td></tr></table>
+</div>
+</div><p>and to identify closed checkbox will be</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">\*\s(\[x\]|)*
+
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="vim-substitute-command">Vim substitute command</h1>
+<p>To create the vim key bindings for our requirement we will using the vim
+substitute command for single line</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">:s/pattern/text/
+</code></pre></td></tr></table>
+</div>
+</div><p>Here the pattern will be the regex for the pattern.So two commands will be</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">:s/\v\*\s(\[\s\]|\[x\]|)*/* [ ]/
+</code></pre></td></tr></table>
+</div>
+</div><p>Here we added an extra <code>\v</code> in the regex.This to handle groups <code>()</code> in regex in
+vim.Check out this <a href="https://stackoverflow.com/questions/19902089/vim-regex-capture-groups-bau-byau-ceu-cyeu">stack
+overflow</a>
+question for more details.</p>
+<h1 id="keybindings-in-vim-lua-configuration">Keybindings in vim lua configuration</h1>
+<p>So next I created two vim keybindings for lua configuration.</p>
+<p>To create or open checkbox</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">vim.api.nvim_set_keymap(&#39;n&#39;, &#39;&lt;Leader&gt;to&#39;,&#39;:s/\\v\\*\\s(\\[\\s\\]|\\[x\\]|)/* [ ]/&lt;CR&gt;&#39;,
+{ noremap = true, silent = true })
+</code></pre></td></tr></table>
+</div>
+</div><p>To close checkbox</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">vim.api.nvim_set_keymap(&#39;n&#39;, &#39;&lt;Leader&gt;tc&#39;,&#39;:s/\\v\\*(\\s\\[\\s\\])/* [x]/&lt;CR&gt;&#39;,
+{ noremap = true, silent = true })
+</code></pre></td></tr></table>
+</div>
+</div><p>Here you can see we have added a extra escape character <code>\</code> to the regex.This is
+because lua parser will give error for escape character for regex.Checkout more
+details in the <a href="https://stackoverflow.com/questions/53729699/invalid-escape-sequence-lua-regex">stack overflow
+question</a>.</p>
+<p>You can find the youtube video for the above steps below</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/n44_MprLQp8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Vim folding to arrange NeoVim config file"></iframe>
+</div>
+
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">jsj</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-07-31
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/vim/">Vim</a>
+          <a href="/tags/lua/">lua</a>
+          <a href="/tags/neovim/">NeoVim</a>
+          <a href="/tags/regex/">regex</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/dotfiles_using_git_orphan_branches/">
+            <span class="next-text nav-default">Storing Dotfiles on git repository using git orphan branches</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>jsj</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
