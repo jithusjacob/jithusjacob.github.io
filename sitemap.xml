@@ -10,55 +10,104 @@
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2021-07-31T13:07:21+05:30</lastmod>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/vim_checkbox_lua/</loc>
-    <lastmod>2021-07-31T13:07:21+05:30</lastmod>
+    <loc>http://localhost:1313/post/fluter_ide_with_lua_lsp_neovim_0.5/</loc>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/flutter/</loc>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/flutter/</loc>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/ide/</loc>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/ide/</loc>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2021-07-31T13:07:21+05:30</lastmod>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/lsp/</loc>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/lua/</loc>
-    <lastmod>2021-07-31T13:07:21+05:30</lastmod>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/lua/</loc>
-    <lastmod>2021-07-31T13:07:21+05:30</lastmod>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/neovim/</loc>
-    <lastmod>2021-07-31T13:07:21+05:30</lastmod>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/neovim/</loc>
-    <lastmod>2021-07-31T13:07:21+05:30</lastmod>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/</loc>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/vim_checkbox_lua/</loc>
     <lastmod>2021-07-31T13:07:21+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -73,13 +122,6 @@
   
   <url>
     <loc>http://localhost:1313/categories/regex/</loc>
-    <lastmod>2021-07-31T13:07:21+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2021-07-31T13:07:21+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -178,34 +220,6 @@
   
   <url>
     <loc>http://localhost:1313/tags/coc-nvim/</loc>
-    <lastmod>2021-06-15T15:41:34+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/flutter/</loc>
-    <lastmod>2021-06-15T15:41:34+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/flutter/</loc>
-    <lastmod>2021-06-15T15:41:34+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/ide/</loc>
-    <lastmod>2021-06-15T15:41:34+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/ide/</loc>
     <lastmod>2021-06-15T15:41:34+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

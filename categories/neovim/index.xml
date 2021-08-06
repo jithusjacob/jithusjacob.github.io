@@ -6,7 +6,17 @@
     <description>Recent content in Neovim on jsj&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 31 Jul 2021 13:07:21 +0530</lastBuildDate><atom:link href="http://localhost:1313/categories/neovim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 09:49:50 +0530</lastBuildDate><atom:link href="http://localhost:1313/categories/neovim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fluter IDE with Neovim 0.5 ,built in LSP and lua</title>
+      <link>http://localhost:1313/post/fluter_ide_with_lua_lsp_neovim_0.5/</link>
+      <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
+      
+      <guid>http://localhost:1313/post/fluter_ide_with_lua_lsp_neovim_0.5/</guid>
+      <description>Introduction So I recently upgraded to NeoVim 0.5 stable release.This release has a inbuilt LSP(Language server protocol) which is a client to LSP servers.It also includes a Lua framework for building enhanced LSP tools.
+I used coc-nvim earlier as LSP client to interact with Dart LSP server which it does automatically using coc-flutter extension.If you want to know how to do that read my previous blog post for more details.</description>
+    </item>
+    
     <item>
       <title>Creating Vim binding for checkbox using regex for lua configuration</title>
       <link>http://localhost:1313/post/vim_checkbox_lua/</link>

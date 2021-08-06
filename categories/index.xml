@@ -6,11 +6,29 @@
     <description>Recent content in Categories on jsj&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 31 Jul 2021 13:07:21 +0530</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 09:49:50 +0530</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flutter</title>
+      <link>http://localhost:1313/categories/flutter/</link>
+      <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
+      
+      <guid>http://localhost:1313/categories/flutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IDE</title>
+      <link>http://localhost:1313/categories/ide/</link>
+      <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
+      
+      <guid>http://localhost:1313/categories/ide/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>lua</title>
       <link>http://localhost:1313/categories/lua/</link>
-      <pubDate>Sat, 31 Jul 2021 13:07:21 +0530</pubDate>
+      <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
       
       <guid>http://localhost:1313/categories/lua/</guid>
       <description></description>
@@ -19,7 +37,7 @@
     <item>
       <title>Neovim</title>
       <link>http://localhost:1313/categories/neovim/</link>
-      <pubDate>Sat, 31 Jul 2021 13:07:21 +0530</pubDate>
+      <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
       
       <guid>http://localhost:1313/categories/neovim/</guid>
       <description></description>
@@ -67,24 +85,6 @@
       <pubDate>Mon, 19 Jul 2021 16:09:06 +0530</pubDate>
       
       <guid>http://localhost:1313/categories/folding/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Flutter</title>
-      <link>http://localhost:1313/categories/flutter/</link>
-      <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
-      
-      <guid>http://localhost:1313/categories/flutter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IDE</title>
-      <link>http://localhost:1313/categories/ide/</link>
-      <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
-      
-      <guid>http://localhost:1313/categories/ide/</guid>
       <description></description>
     </item>
     

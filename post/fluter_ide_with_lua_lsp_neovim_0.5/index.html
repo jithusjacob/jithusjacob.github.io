@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Fluter IDE with Neovim 0.5 ,built in LSP and lua - jsj&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="jsj" /><meta name="description" content="Introduction So I recently upgraded to NeoVim 0.5 stable release.This release has a inbuilt LSP(Language server protocol) which is a client to LSP servers.It also includes a Lua framework for building enhanced LSP tools.
+I used coc-nvim earlier as LSP client to interact with Dart LSP server which it does automatically using coc-flutter extension.If you want to know how to do that read my previous blog post for more details." /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/fluter_ide_with_lua_lsp_neovim_0.5/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b874a8796a492f0d7c86bb24c33cbf052935783a5778ebaf819a8e514bf49f10.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Fluter IDE with Neovim 0.5 ,built in LSP and lua" />
+<meta property="og:description" content="Introduction So I recently upgraded to NeoVim 0.5 stable release.This release has a inbuilt LSP(Language server protocol) which is a client to LSP servers.It also includes a Lua framework for building enhanced LSP tools.
+I used coc-nvim earlier as LSP client to interact with Dart LSP server which it does automatically using coc-flutter extension.If you want to know how to do that read my previous blog post for more details." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/fluter_ide_with_lua_lsp_neovim_0.5/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-02T09:49:50&#43;05:30" />
+<meta property="article:modified_time" content="2021-08-02T09:49:50&#43;05:30" />
+
+<meta itemprop="name" content="Fluter IDE with Neovim 0.5 ,built in LSP and lua">
+<meta itemprop="description" content="Introduction So I recently upgraded to NeoVim 0.5 stable release.This release has a inbuilt LSP(Language server protocol) which is a client to LSP servers.It also includes a Lua framework for building enhanced LSP tools.
+I used coc-nvim earlier as LSP client to interact with Dart LSP server which it does automatically using coc-flutter extension.If you want to know how to do that read my previous blog post for more details."><meta itemprop="datePublished" content="2021-08-02T09:49:50&#43;05:30" />
+<meta itemprop="dateModified" content="2021-08-02T09:49:50&#43;05:30" />
+<meta itemprop="wordCount" content="2012">
+<meta itemprop="keywords" content="NeoVim,Flutter,IDE,LSP,lua," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fluter IDE with Neovim 0.5 ,built in LSP and lua"/>
+<meta name="twitter:description" content="Introduction So I recently upgraded to NeoVim 0.5 stable release.This release has a inbuilt LSP(Language server protocol) which is a client to LSP servers.It also includes a Lua framework for building enhanced LSP tools.
+I used coc-nvim earlier as LSP client to interact with Dart LSP server which it does automatically using coc-flutter extension.If you want to know how to do that read my previous blog post for more details."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">jsj&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">jsj&#39;s blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Fluter IDE with Neovim 0.5 ,built in LSP and lua</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-08-02 </span>
+        <div class="post-category">
+            <a href="/categories/neovim/"> NeoVim </a>
+            <a href="/categories/flutter/"> Flutter </a>
+            <a href="/categories/ide/"> IDE </a>
+            <a href="/categories/lua/"> lua </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#neovim-configuration-folder-structure-for-lua">NeoVim configuration folder structure for lua.</a></li>
+        <li><a href="#plugin-manger-in-lua">Plugin Manger in lua</a>
+          <ul>
+            <li><a href="#install-paq-plugin-manager-on-windows">Install paq plugin manager on windows</a></li>
+            <li><a href="#install-plugins">Install plugins</a></li>
+          </ul>
+        </li>
+        <li><a href="#connecting-dart-lsp-server-to-neovim-lsp-client">Connecting Dart LSP server to Neovim LSP client</a>
+          <ul>
+            <li><a href="#dart-language-server">Dart Language Server</a></li>
+            <li><a href="#connecting-dart-language-server-to-nvim-lspconfig">Connecting Dart Language server to nvim lspconfig</a></li>
+          </ul>
+        </li>
+        <li><a href="#auto-completion-and--snippets">Auto Completion and  Snippets</a>
+          <ul>
+            <li><a href="#auto-completion">Auto Completion</a></li>
+            <li><a href="#snippets">Snippets</a></li>
+            <li><a href="#syntax-highlighting-and-formatting">Syntax highlighting and formatting</a></li>
+            <li><a href="#syntax-highlighting">Syntax highlighting</a></li>
+            <li><a href="#formatting">Formatting</a></li>
+          </ul>
+        </li>
+        <li><a href="#changing-the-lsp-diagnostic-appearance">Changing the LSP Diagnostic appearance</a></li>
+        <li><a href="#code-action-and-ui-changes">Code Action and UI changes.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="introduction">Introduction</h2>
+<p>So I recently upgraded to NeoVim 0.5 stable release.This release has a inbuilt
+LSP(Language server protocol) which is a client to  LSP servers.It also includes
+a Lua framework for building enhanced LSP tools.</p>
+<p>I used <a href="https://github.com/neoclide/coc.nvim">coc-nvim</a> earlier as LSP client to
+interact with <a href="https://github.com/dart-lang/sdk/blob/master/pkg/analysis_server/tool/lsp_spec/README.md">Dart LSP server</a>
+which it does automatically using
+<a href="https://github.com/iamcco/coc-flutter">coc-flutter</a> extension.If you want to
+know how to do that read my previous
+<a href="https://jithusjacob.github.io/post/vim_flutter_ide/">blog post</a> for more
+details.</p>
+<p>The <a href="https://github.com/neoclide/coc.nvim">coc-nvim</a> and
+<a href="https://github.com/iamcco/coc-flutter">coc-flutter</a> are great tools with lot
+of stability and support.So I might still use it.But I plan to try out setting
+up Neovim Flutter IDE with its inbuilt LSP and see if its easy to setup and
+worth using.Below are the steps for the same</p>
+<h2 id="neovim-configuration-folder-structure-for-lua">NeoVim configuration folder structure for lua.</h2>
+<p>Since we are migrating to lua based configuration.I have setup my nvim folder as
+below.Its not necessary to do this.You can also use old folder structure you have
+and use vim script.Just insert the lua script in vim script using lua tags as
+below</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">lua &lt;&lt; EOF
+-- insert lua code here
+EOF
+</code></pre></td></tr></table>
+</div>
+</div><p>For more details on migrating and different options check out this <a href="https://github.com/nanotee/nvim-lua-guide">guide</a></p>
+<p>So I have create the below folder structure in my nvim folder</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">~\AppData\Local\nvim\..
+  lua
+    colorscheme.lua
+    init.lua
+    keymappings.lua
+    nvim_tree.lua
+    plugins.lua
+    settings.lua
+    telescope.lua
+  init.vim
+</code></pre></td></tr></table>
+</div>
+</div><p>Here all the lua files are present in lua folder.In <code>init.lua</code> all the lua files
+are linked as below</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">-- Map leader to space
+  vim.g.mapleader = &#39; &#39;
+   require(&#39;plugins&#39;)
+   require(&#39;colorscheme&#39;)
+   require(&#39;nvim_tree&#39;)
+   require(&#39;telescope&#39;)
+   require(&#39;settings&#39;)
+   require(&#39;keymappings&#39;)
+</code></pre></td></tr></table>
+</div>
+</div><p>So if I add any files in lua folder I need to mention that in <code>init.lua</code> , so
+that it can be linked to NeoVim.Next I link my <code>init.lua</code> with <code>init.vim</code> using
+the below command</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">lua &lt;&lt; EOF
+require(&#39;init&#39;)
+EOF
+</code></pre></td></tr></table>
+</div>
+</div><p>Actually we can use <code>init.lua</code> instead of <code>init.vim</code>.But since the lua feature
+is new so I am using <code>init.vim</code> in case there are some scenarios which I cannot
+do using lua.</p>
+<h2 id="plugin-manger-in-lua">Plugin Manger in lua</h2>
+<p>So since we are migrating to Neovim 0.5 with lua support .I will be using a
+package manager in lua.There are two options</p>
+<ol>
+<li><a href="https://github.com/wbthomason/packer.nvim">packer.nvim</a></li>
+<li><a href="https://github.com/savq/paq-nvim">paq-nvim</a></li>
+</ol>
+<p>I tried packer and found that it has lot of options and is little bit
+complicated.So I went with <a href="https://github.com/savq/paq-nvim">paq-nvim</a>.</p>
+<p>Note: If you are still using vim script for NeoVim configuration then you can
+still use your old plugin manager.</p>
+<h3 id="install-paq-plugin-manager-on-windows">Install paq plugin manager on windows</h3>
+<p>You install the paq plugin manager on windows using the below command.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone https://github.com/savq/paq-nvim.git &#34;$env:LOCALAPPDATA\nvim-data\site\pack\paqs\start\paq-nvim&#34;
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="install-plugins">Install plugins</h3>
+<p>We can install plugins by giving the below commands in <code>init.lua</code>.I have instead
+given these commands in the plugins.lua file and given the <code>require('plugins')</code>
+command in the <code>init.lua</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">require &#34;paq&#34; {
+    &#34;savq/paq-nvim&#34;;                  -- Let Paq manage itself
+    -- Auto Pair 
+    &#34;jiangmiao/auto-pairs&#34;
+
+}
+
+</code></pre></td></tr></table>
+</div>
+</div><p>After adding the above lines source your configuration
+(using :source % or :luafile %) or quit Neovim and open again and run :PaqInstall.
+For more details check <a href="https://github.com/savq/paq-nvim">paq-nvim</a> page.</p>
+<h2 id="connecting-dart-lsp-server-to-neovim-lsp-client">Connecting Dart LSP server to Neovim LSP client</h2>
+<h3 id="dart-language-server">Dart Language Server</h3>
+<p>Dart has its own language server.We can check that in <a href="https://github.com/dart-lang/sdk/blob/master/pkg/analysis_server/tool/lsp_spec/README.md">dart SDK github
+page</a>.
+This is downloaded if you have installed flutter in your system.</p>
+<p>To check if Dart language server is working we can use the below command</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">dart C:\Users\jithu\Documents\flutter\bin\cache\dart-sdk\bin\snapshots\analysis_server.dart.snapshot
+</code></pre></td></tr></table>
+</div>
+</div><p>The server gets started.</p>
+<h3 id="connecting-dart-language-server-to-nvim-lspconfig">Connecting Dart Language server to nvim lspconfig</h3>
+<p>We can connect to Dart Language server in 2 ways.</p>
+<ol>
+<li>Manually</li>
+<li>Using <a href="https://github.com/akinsho/flutter-tools.nvim">flutter-tools</a> plugin</li>
+</ol>
+<p>Note: I prefer the second option as
+<a href="https://github.com/akinsho/flutter-tools.nvim">flutter-tools</a> plugin.It has
+lot of flutter related features which we would need to setup manually in the
+first option.</p>
+<h4 id="manually">Manually</h4>
+<p>To connect the Dart Language server to Neovim manually we need to install
+<a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a>and give the below
+lines in our <code>init.lua</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">require&#39;lspconfig&#39;.dartls.setup{
+cmd = { &#34;dart&#34;, &#34;C:\\Users\\jithu\\Documents\\flutter\\bin\\cache\\dart-sdk\\bin\\snapshots\\analysis_server.dart.snapshot&#34;, &#34;--lsp&#34; },
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>This code is based on the configurations given for dart in
+<a href="https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#dartls">nvim lspconfig config page</a></p>
+<p>We need to ensure two things for the above command to work</p>
+<ol>
+<li>dart command is added to the environment variable.</li>
+<li>path to dart lsp server in windows is given with <code>\\</code> .This is specific to
+windows</li>
+</ol>
+<p>In order to automatically launch a language server, lspconfig searches up the
+directory tree from your current buffer to find a file matching the root_dir
+pattern defined in each server&rsquo;s configuration. For dartls as per
+<a href="https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#dartls">nvim lspconfig config page</a>
+the pattern it checks for is <code>pubspec.yaml</code></p>
+<p>After completing the above steps we can check if the LSP server is connected
+to Neovim using the below command.I opened a flutter project and gave the below
+command.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">:LspInfo
+</code></pre></td></tr></table>
+</div>
+</div><p>This will give you the details of clients and LSP attached.</p>
+<h4 id="flutter-toolshttpsgithubcomakinshoflutter-toolsnvim"><a href="https://github.com/akinsho/flutter-tools.nvim">Flutter-tools</a></h4>
+<p>I use the second option because of the flutter related options available in the
+plugin.Install by adding the below lines in <code>plugins.lua</code> and quit neovim and
+open again and do :PaqInstall.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">{&#39;akinsho/flutter-tools.nvim&#39;, requires = &#39;nvim-lua/plenary.nvim&#39;};
+</code></pre></td></tr></table>
+</div>
+</div><p>After install I created a file call <code>flutter.lua</code> under the lua folder and in
+that added the below line to setup the flutter tool plugin.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">require(&#34;flutter-tools&#34;).setup{}
+</code></pre></td></tr></table>
+</div>
+</div><p>Also added the below line in my <code>init.lua</code> to link the <code>flutter.lua</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">require(&#39;flutter&#39;)
+</code></pre></td></tr></table>
+</div>
+</div><p>Flutter related features given by this plugin are,FlutterRun,FlutterDevices,
+FlutterEmulators,FlutterReload,FlutterRestar,FlutterQuit,FlutterOutline,
+FlutterDevTools etc.It has telescope integration also. For details check the site.
+You can create key bindings for these commands as I have done.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">vim.api.nvim_set_keymap(&#39;n&#39;, &#39;&lt;Leader&gt;fr&#39;,&#39;:FlutterRun&lt;CR&gt;&#39;
+, { noremap = true, silent = true })
+vim.api.nvim_set_keymap(&#39;n&#39;, &#39;&lt;Leader&gt;fc&#39;,
+[[&lt;Cmd&gt;lua require(&#39;telescope&#39;).extensions.flutter.commands()&lt;CR&gt;]],
+{ noremap = true, silent = true })
+</code></pre></td></tr></table>
+</div>
+</div><p>Note: I had a file called telescope.lua for my telescope plugin which was
+causing issues with flutter telescope extension.So I renamed the file
+telescope_plugin and its working fine now.</p>
+<p>You can add individual bindings for Hot restart etc in similar way.Check
+<a href="https://github.com/akinsho/flutter-tools.nvim">Flutter-tools</a> page.</p>
+<p>Lets test the LSP is connected or not.I create a test_project for flutter.I
+deleted some lines in the <code>main.dart</code> to check if errors are coming.It was not
+detecting the errors.I searched and tried different things.Finally adding
+the dart sdk bin in the PATH variable solved it.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">C:\Users\jithu\Documents\flutter\bin\cache\dart-sdk\bin
+</code></pre></td></tr></table>
+</div>
+</div><p>Now I can see the errors coming.So now the dart LSP is connected to NeoVim.</p>
+<p>Things to consider.</p>
+<ol>
+<li>flutter tools does not depend on nvim-lspconfig. The two can co-exist but
+please ensure you do NOT configure dartls using lspconfig. It will be
+automatically set up by this plugin instead. So the dart LSP is automatically
+setup and connected to Neovim LSP client by flutter tools.
+2)This plugin does not give auto-complete,code action,formatting options.These
+need to be configured separately which we will be doing in the below steps.</li>
+</ol>
+<h2 id="auto-completion-and--snippets">Auto Completion and  Snippets</h2>
+<p>We can add any autocompletion  plugin and snippets plugin.I am planning to use
+autocompletion plugin <a href="https://github.com/hrsh7th/nvim-compe">nvim compe</a>
+and a snippets plugins <a href="https://github.com/hrsh7th/vim-vsnip">vim-snip</a>.The
+snippets plugin has support to create snippets similar to VS code snippets.So I
+can copy the common VS code snippets available for dart and flutter.</p>
+<p>So install both the plugins using the below command</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&#39;hrsh7th/nvim-compe&#39;
+&#39;hrsh7th/vim-vsnip&#39;
+&#39;hrsh7th/vim-vsnip-integ&#39;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="auto-completion">Auto Completion</h3>
+<p>Now lets setup the auto completion plugin we have installed.I created a file
+called <code>compe_snippets.lua</code> under lua folder and added the below lines in it.
+This last lines will allow tab completion.Also check the source which nvim-compe
+uses.Since I plan to use vsnip.I have setup that as true.If you have some other
+snippets you can use that.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">vim.o.completeopt = &#34;menuone,noselect&#34;
+vim.api.nvim_set_keymap(&#34;i&#34;, &#34;&lt;CR&gt;&#34;, &#34;compe#confirm({ &#39;keys&#39;: &#39;&lt;CR&gt;&#39;, &#39;select&#39;: v:true })&#34;,
+{ expr = true })
+
+require&#39;compe&#39;.setup {
+  enabled = true;
+  autocomplete = true;
+  debug = false;
+  min_length = 1;
+  preselect = &#39;enable&#39;;
+  throttle_time = 80;
+  source_timeout = 200;
+  resolve_timeout = 800;
+  incomplete_delay = 400;
+  max_abbr_width = 100;
+  max_kind_width = 100;
+  max_menu_width = 100;
+  documentation = {
+    border = { &#39;&#39;, &#39;&#39; ,&#39;&#39;, &#39; &#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39; &#39; }, -- the border option is the same as `|help nvim_open_win|`
+    winhighlight = &#34;NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder&#34;,
+    max_width = 120,
+    min_width = 60,
+    max_height = math.floor(vim.o.lines * 0.3),
+    min_height = 1,
+  };
+
+   source = {
+    path = true;
+    buffer = true;
+    calc = true;
+    nvim_lsp = true;
+    nvim_lua = true;
+    vsnip = true;
+    ultisnips = false;
+    luasnip = false;
+  };                                                                                              }
+local t = function(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+local check_back_space = function()
+    local col = vim.fn.col(&#39;.&#39;) - 1
+    return col == 0 or vim.fn.getline(&#39;.&#39;):sub(col, col):match(&#39;%s&#39;) ~= nil
+end
+-- Use (s-)tab to:
+--- move to prev/next item in completion menuone
+--- jump to prev/next snippet&#39;s placeholder
+_G.tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t &#34;&lt;C-n&gt;&#34;
+  elseif vim.fn[&#39;vsnip#available&#39;](1) == 1 then
+    return t &#34;&lt;Plug&gt;(vsnip-expand-or-jump)&#34;
+  elseif check_back_space() then
+    return t &#34;&lt;Tab&gt;&#34;
+  else
+    return vim.fn[&#39;compe#complete&#39;]()                                                               end
+end
+_G.s_tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t &#34;&lt;C-p&gt;&#34;
+  elseif vim.fn[&#39;vsnip#jumpable&#39;](-1) == 1 then
+    return t &#34;&lt;Plug&gt;(vsnip-jump-prev)&#34;
+  else
+    -- If &lt;S-Tab&gt; is not working in your terminal, change it to &lt;C-h&gt;
+    return t &#34;&lt;S-Tab&gt;&#34;
+  end
+end
+
+vim.api.nvim_set_keymap(&#34;i&#34;, &#34;&lt;Tab&gt;&#34;, &#34;v:lua.tab_complete()&#34;, {expr = true})
+vim.api.nvim_set_keymap(&#34;s&#34;, &#34;&lt;Tab&gt;&#34;, &#34;v:lua.tab_complete()&#34;, {expr = true})
+vim.api.nvim_set_keymap(&#34;i&#34;, &#34;&lt;S-Tab&gt;&#34;, &#34;v:lua.s_tab_complete()&#34;, {expr = true})
+vim.api.nvim_set_keymap(&#34;s&#34;, &#34;&lt;S-Tab&gt;&#34;, &#34;v:lua.s_tab_complete()&#34;, {expr = true})
+</code></pre></td></tr></table>
+</div>
+</div><p>Also in <code>init.lua</code> I added the below line to link <code>compe.lua</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">require(&#39;compe&#39;)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="snippets">Snippets</h3>
+<p>I am using <a href="https://github.com/hrsh7th/vim-vsnip">vsnip</a> for snippets.It allows
+to use VS code snippets.So I have taken the snippets from
+<a href="https://github.com/Dart-Code/Dart-Code/tree/master/snippets">Dart-code</a> for VS
+code.</p>
+<p>To enable snippet support in LSP I modified the <code>flutter.lua</code> like this</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true;
+
+require(&#34;flutter-tools&#34;).setup{
+
+lsp = {
+    capabilities = capabilities,                                                                    }
+
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>So next I have given the path where snippets will be stored as below</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">vim.g.vsnip_snippet_dir = &#39;C:\\Users\\jithu\\AppData\\Local\\nvim\\snippets\\&#39;;
+</code></pre></td></tr></table>
+</div>
+</div><p>You give the path where you want to store.</p>
+<p>Then to create snippets follow the below steps</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Open some file (example: main.dart)
+Invoke :VsnipOpen command.
+Edit snippet.
+Then save
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="syntax-highlighting-and-formatting">Syntax highlighting and formatting</h3>
+<h3 id="syntax-highlighting">Syntax highlighting</h3>
+<p>For syntax highlighting we will be using the <a href="https://github.com/dart-lang/dart-vim-plugin">dart-vim-plugin</a>
+plugin.Install by adding the below line in the <code>plugins.lua</code> file then quite and
+open Neovim and :PaqInstall.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&#39;dart-lang/dart-vim-plugin&#39;;
+</code></pre></td></tr></table>
+</div>
+</div><p>Also some color schemes do not have LSP diagnostics highlighting or are changed
+by the color schemes.So I added the below in <code>colorscheme.lua</code> at the end.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">vim.cmd([[ autocmd ColorScheme * :lua require(&#39;vim.lsp.diagnostic&#39;)._define_default_signs_and_highlights() ]])
+</code></pre></td></tr></table>
+</div>
+</div><p>Source:<a href="https://github.com/neovim/nvim-lspconfig/issues/516">https://github.com/neovim/nvim-lspconfig/issues/516</a></p>
+<h3 id="formatting">Formatting</h3>
+<p>The same plugin has a formatting command <code>:DartFmt</code>.So for auto formatting on
+save I added the below lines in <code>flutter.lua</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">-- autoformat on save
+vim.cmd &#39;au BufWritePre *.dart :DartFmt&#39;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="changing-the-lsp-diagnostic-appearance">Changing the LSP Diagnostic appearance</h2>
+<p>So we can use the below lines to change the LSP Diagnostic appearance.I added
+these line in my &lsquo;flutter.lua&rsquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">-- LSP Enable diagnostics
+ vim.lsp.handlers[&#34;textDocument/publishDiagnostics&#34;] =
+    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false,
+        underline = true,
+        signs = true,
+        update_in_insert = false
+   })
+</code></pre></td></tr></table>
+</div>
+</div><p>I have disabled virtual text.You can keep it if you want.</p>
+<h2 id="code-action-and-ui-changes">Code Action and UI changes.</h2>
+<p>For code action and some UI changes I am using the <a href="https://github.com/glepnir/lspsaga.nvim">lspsaga</a>
+plugin.Add the below line in <code>plugins.lua</code> quit and start Neovim and the
+:PaqInstall to install</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">--  lsp plugin based on neovim built-in lsp
+   &#39;glepnir/lspsaga.nvim&#39;;
+</code></pre></td></tr></table>
+</div>
+</div><p>Next to change the symbols and code action bindings using lspsaga ,added the
+below lines in <code>flutter.lua</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">local saga = require &#39;lspsaga&#39;
+saga.init_lsp_saga {
+error_sign = &#39;➤&#39;,
+warn_sign = &#39;➤&#39;,
+hint_sign = &#39;➤&#39;,
+infor_sign = &#39;➤&#39;,
+code_action_icon = &#39;&#39;,
+code_action_keys = {
+  quit = &#39;&lt;ESC&gt;&#39;,exec = &#39;&lt;CR&gt;&#39;
+  },
+}
+vim.api.nvim_set_keymap(&#39;n&#39;, &#39;&lt;Leader&gt;ca&#39;,&#39;:Lspsaga code_action&lt;CR&gt;&#39;,
+{ noremap = true, silent = true })
+vim.api.nvim_set_keymap(&#39;n&#39;, &#39;&lt;Leader&gt;fe&#39;,&#39;:Lspsaga diagnostic_jump_next&lt;CR&gt;&#39;,
+{ noremap = true, silent = true })
+</code></pre></td></tr></table>
+</div>
+</div><p>You can add more keybindings as necessary by referring to  <a href="https://github.com/glepnir/lspsaga.nvim">lspsaga</a>
+page.</p>
+<p>You can find the youtube video for the above steps below</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/jt83rWqo9co" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Fluter IDE with Neovim 0.5 ,built in LSP and lua"></iframe>
+</div>
+
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">jsj</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-08-02
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/neovim/">NeoVim</a>
+          <a href="/tags/flutter/">Flutter</a>
+          <a href="/tags/ide/">IDE</a>
+          <a href="/tags/lsp/">LSP</a>
+          <a href="/tags/lua/">lua</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/vim_checkbox_lua/">
+            <span class="next-text nav-default">Creating Vim binding for checkbox using regex for lua configuration</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>jsj</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
