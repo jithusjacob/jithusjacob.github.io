@@ -28,7 +28,7 @@ Requirement If there is item with * then we need to add a checkbox
     </item>
     
     <item>
-      <title>Setup Vim as a Flutter IDE using coc-nvim</title>
+      <title>Setup Vim as a Flutter IDE using coc-nvim on windows</title>
       <link>http://localhost:1313/post/vim_flutter_ide/</link>
       <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
       

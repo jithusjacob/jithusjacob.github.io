@@ -6,9 +6,18 @@
     <description>Recent content in Posts on jsj&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Aug 2021 09:49:50 +0530</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Aug 2021 10:58:51 +0530</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Fluter IDE with Neovim 0.5 ,built in LSP and lua</title>
+      <title>Flutter theme and responsive UI</title>
+      <link>http://localhost:1313/post/flutter_theme_responsive_ui/</link>
+      <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/post/flutter_theme_responsive_ui/</guid>
+      <description>Introduction In the flutter application I am creating I need a single place where the app theme can be added which will reflect in the whole application.This includes color,font size and other look and feel elements.This is so if any changes are required in the UI. It can be easily done at a single place.Also the text size and position of other elements should be dynamic based on the screen size for a responsive UI.</description>
+    </item>
+    
+    <item>
+      <title>Fluter IDE with Neovim 0.5 ,built in LSP and lua on windows</title>
       <link>http://localhost:1313/post/fluter_ide_with_lua_lsp_neovim_0.5/</link>
       <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
       
@@ -47,7 +56,7 @@ Requirement If there is item with * then we need to add a checkbox
     </item>
     
     <item>
-      <title>Setup Vim as a Flutter IDE using coc-nvim</title>
+      <title>Setup Vim as a Flutter IDE using coc-nvim on windows</title>
       <link>http://localhost:1313/post/vim_flutter_ide/</link>
       <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
       

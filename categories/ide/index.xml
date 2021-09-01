@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Mon, 02 Aug 2021 09:49:50 +0530</lastBuildDate><atom:link href="http://localhost:1313/categories/ide/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Fluter IDE with Neovim 0.5 ,built in LSP and lua</title>
+      <title>Fluter IDE with Neovim 0.5 ,built in LSP and lua on windows</title>
       <link>http://localhost:1313/post/fluter_ide_with_lua_lsp_neovim_0.5/</link>
       <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
       
@@ -18,7 +18,7 @@ I used coc-nvim earlier as LSP client to interact with Dart LSP server which it 
     </item>
     
     <item>
-      <title>Setup Vim as a Flutter IDE using coc-nvim</title>
+      <title>Setup Vim as a Flutter IDE using coc-nvim on windows</title>
       <link>http://localhost:1313/post/vim_flutter_ide/</link>
       <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
       

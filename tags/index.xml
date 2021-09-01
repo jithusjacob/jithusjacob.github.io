@@ -6,13 +6,58 @@
     <description>Recent content in Tags on jsj&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Aug 2021 09:49:50 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Aug 2021 10:58:51 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>App</title>
+      <link>http://localhost:1313/tags/app/</link>
+      <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bloc</title>
+      <link>http://localhost:1313/tags/bloc/</link>
+      <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/bloc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dart</title>
+      <link>http://localhost:1313/tags/dart/</link>
+      <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/dart/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Flutter</title>
       <link>http://localhost:1313/tags/flutter/</link>
-      <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
+      <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
       
       <guid>http://localhost:1313/tags/flutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MediaQuery</title>
+      <link>http://localhost:1313/tags/mediaquery/</link>
+      <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/mediaquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Theme</title>
+      <link>http://localhost:1313/tags/theme/</link>
+      <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/theme/</guid>
       <description></description>
     </item>
     
@@ -49,6 +94,15 @@
       <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
       
       <guid>http://localhost:1313/tags/neovim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
+      <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     
@@ -103,15 +157,6 @@
       <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
       
       <guid>http://localhost:1313/tags/orphan-branch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
-      <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     

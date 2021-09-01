@@ -6,7 +6,17 @@
     <description>Recent content in Windows on jsj&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Jul 2021 10:54:57 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 09:49:50 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fluter IDE with Neovim 0.5 ,built in LSP and lua on windows</title>
+      <link>http://localhost:1313/post/fluter_ide_with_lua_lsp_neovim_0.5/</link>
+      <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
+      
+      <guid>http://localhost:1313/post/fluter_ide_with_lua_lsp_neovim_0.5/</guid>
+      <description>Introduction So I recently upgraded to NeoVim 0.5 stable release.This release has a inbuilt LSP(Language server protocol) which is a client to LSP servers.It also includes a Lua framework for building enhanced LSP tools.
+I used coc-nvim earlier as LSP client to interact with Dart LSP server which it does automatically using coc-flutter extension.If you want to know how to do that read my previous blog post for more details.</description>
+    </item>
+    
     <item>
       <title>Storing Dotfiles on git repository using git orphan branches</title>
       <link>http://localhost:1313/post/dotfiles_using_git_orphan_branches/</link>
@@ -14,6 +24,16 @@
       
       <guid>http://localhost:1313/post/dotfiles_using_git_orphan_branches/</guid>
       <description>So recently Neovim 0.5 version was released with in built LSP(Language Server Protocol) and Lua language support. So I modifed my init.vim with &amp;lsquo;coc-nvim&amp;rsquo; to init.lua and the in built LSP.I want to save both the config files in GitHub.I googled and found that people have dot files repository where they store all the configuration files.So I decided to follow the same approach.I used the git orphan branches to store different configuration files.</description>
+    </item>
+    
+    <item>
+      <title>Setup Vim as a Flutter IDE using coc-nvim on windows</title>
+      <link>http://localhost:1313/post/vim_flutter_ide/</link>
+      <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
+      
+      <guid>http://localhost:1313/post/vim_flutter_ide/</guid>
+      <description>I recently started using Neovim as my text editor.Also right now I am learning Flutter to create a mobile application for my personal project. So I decided to setup Neovim as a Flutter IDE.With this I can practice Vim with Flutter.
+Install Plugins To setup Neovim as Flutter IDE we need to use coc.nvim plugin .Also for formatting, I am using the dart_vim_plugin.We also need the snippets to be loaded like the ones for stateless/stateful widget.</description>
     </item>
     
     <item>
