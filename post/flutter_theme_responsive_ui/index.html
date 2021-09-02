@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Flutter theme and responsive UI">
 <meta itemprop="description" content="Introduction In the flutter application I am creating I need a single place where the app theme can be added which will reflect in the whole application.This includes color,font size and other look and feel elements.This is so if any changes are required in the UI. It can be easily done at a single place.Also the text size and position of other elements should be dynamic based on the screen size for a responsive UI."><meta itemprop="datePublished" content="2021-08-30T10:58:51&#43;05:30" />
 <meta itemprop="dateModified" content="2021-08-30T10:58:51&#43;05:30" />
-<meta itemprop="wordCount" content="1388">
+<meta itemprop="wordCount" content="1384">
 <meta itemprop="keywords" content="App,Flutter,dart,Theme,MediaQuery,bloc," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flutter theme and responsive UI"/>
 <meta name="twitter:description" content="Introduction In the flutter application I am creating I need a single place where the app theme can be added which will reflect in the whole application.This includes color,font size and other look and feel elements.This is so if any changes are required in the UI. It can be easily done at a single place.Also the text size and position of other elements should be dynamic based on the screen size for a responsive UI."/>
@@ -374,9 +374,9 @@ class SizeConfig {
   /// Initialaizer
   SizeConfig({required this.screenHeight, required this.screenWidth})
       : heightScaleRatio =
-            screenHeight / baseHeight &gt; 1 ? 1 : screenHeight / baseHeight,
+            screenHeight &gt; 700 ? 1 : screenHeight / baseHeight,
         widthScaleRatio =
-            screenWidth / baseWidth &gt; 1 ? 1 : screenWidth / baseWidth;
+            screenWidth  &gt; 480 ? 1 : screenWidth / baseWidth;
 
 
   ///base height of the screen
@@ -606,7 +606,7 @@ class SizeConfigBloc extends Bloc&lt;SizeConfigEvent,SizeConfig &gt; {
       final w = mediaQueryData.size.width;
       final h = mediaQueryData.size.height;
       context.read&lt;SizeConfigBloc&gt;().add(
-            SizeConfigEvent(screenHeight: w, screenWidth: h),
+            SizeConfigEvent(screenHeight: h, screenWidth: w),
           );
       return MediaQuery(
         data: mediaQueryData.copyWith(
