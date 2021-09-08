@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Flutter theme and responsive UI">
 <meta itemprop="description" content="Introduction In the flutter application I am creating I need a single place where the app theme can be added which will reflect in the whole application.This includes color,font size and other look and feel elements.This is so if any changes are required in the UI. It can be easily done at a single place.Also the text size and position of other elements should be dynamic based on the screen size for a responsive UI."><meta itemprop="datePublished" content="2021-08-30T10:58:51&#43;05:30" />
 <meta itemprop="dateModified" content="2021-08-30T10:58:51&#43;05:30" />
-<meta itemprop="wordCount" content="1384">
+<meta itemprop="wordCount" content="1377">
 <meta itemprop="keywords" content="App,Flutter,dart,Theme,MediaQuery,bloc," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flutter theme and responsive UI"/>
 <meta name="twitter:description" content="Introduction In the flutter application I am creating I need a single place where the app theme can be added which will reflect in the whole application.This includes color,font size and other look and feel elements.This is so if any changes are required in the UI. It can be easily done at a single place.Also the text size and position of other elements should be dynamic based on the screen size for a responsive UI."/>
@@ -280,11 +280,9 @@ class AppTheme {
 </span><span class="lnt">18
 </span><span class="lnt">19
 </span><span class="lnt">20
-</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Documents\Flutter_Projects\moneypie\lib\common\app_theme.dart                                                                                         1,1            All
-import &#39;package:flutter/material.dart&#39;;
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">import &#39;package:flutter/material.dart&#39;;
 import &#39;package:moneypie/common/app_theme.dart&#39;;
 import &#39;package:moneypie/features/net_worth/presentation/screens/add_edit_page.dart&#39;;
 
@@ -583,13 +581,9 @@ class SizeConfigBloc extends Bloc&lt;SizeConfigEvent,SizeConfig &gt; {
 </span><span class="lnt">112
 </span><span class="lnt">113
 </span><span class="lnt">114
-</span><span class="lnt">115
-</span><span class="lnt">116
-</span><span class="lnt">117
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">  import &#39;package:flutter/material.dart&#39;; 
-  import &#39;package:flutter_bloc/flutter_bloc.dart&#39;;
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">  import &#39;package:flutter/material.dart&#39;;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 import &#39;package:flutter_bloc/flutter_bloc.dart&#39;;
   import &#39;package:moneypie/common/bloc/size_config_bloc.dart&#39;;
   import &#39;package:moneypie/common/size_config.dart&#39;;
 
@@ -601,26 +595,25 @@ class SizeConfigBloc extends Bloc&lt;SizeConfigEvent,SizeConfig &gt; {
 
     @override
     Widget build(BuildContext context) {
-      // Obtain the current media query information.
-      final mediaQueryData = MediaQuery.of(context);
-      final w = mediaQueryData.size.width;
-      final h = mediaQueryData.size.height;
-      context.read&lt;SizeConfigBloc&gt;().add(
-            SizeConfigEvent(screenHeight: h, screenWidth: w),
-          );
-      return MediaQuery(
-        data: mediaQueryData.copyWith(
-            textScaleFactor:
-                context.read&lt;SizeConfigBloc&gt;().state.widthScaleRatio),
-        child: Scaffold(
-          body: SafeArea(
-            child: SingleChildScrollView(
-                child: BlocBuilder&lt;SizeConfigBloc, SizeConfig&gt;(
-                    buildWhen: (previous, current) =&gt;
-                        previous.heightScaleRatio != current.heightScaleRatio ||
-                        previous.widthScaleRatio != current.widthScaleRatio,
-                    builder: (context, state) {
-                      return Column(
+      return Scaffold(
+        body: SafeArea(
+          child: SingleChildScrollView(
+              child: BlocBuilder&lt;SizeConfigBloc, SizeConfig&gt;(
+                  buildWhen: (previous, current) =&gt;
+                      previous.heightScaleRatio != current.heightScaleRatio ||
+                      previous.widthScaleRatio != current.widthScaleRatio,
+                  builder: (context, state) {
+                    // Obtain the current media query information.
+                    final mediaQueryData = MediaQuery.of(context);
+                    final w = mediaQueryData.size.width;
+                    final h = mediaQueryData.size.height;
+                    context.read&lt;SizeConfigBloc&gt;().add(
+                          SizeConfigEvent(screenHeight: w, screenWidth: h),
+                        );
+                    return MediaQuery(
+                      data: mediaQueryData.copyWith(
+                          textScaleFactor: state.widthScaleRatio),
+                      child: Column(
                         children: [
                           Row(
                             children: [
@@ -697,14 +690,13 @@ class SizeConfigBloc extends Bloc&lt;SizeConfigEvent,SizeConfig &gt; {
                             child: _AddButton(),
                           ), // Padding
                         ],
-                      ); // Column
-                    })), // BlocBuilder
-          ), // SafeArea
-        ), // Scaffold
-      ); // MediaQuery
+                      ), // Column
+                    ); // MediaQuery
+                  })), // BlocBuilder
+        ), // SafeArea
+      ); // Scaffold
     }
   }
-
 </code></pre></td></tr></table>
 </div>
 </div><p>This might not be the perfect solution and might need to be modified further.But
