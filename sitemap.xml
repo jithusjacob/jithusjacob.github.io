@@ -2,121 +2,121 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/tags/app/</loc>
+    <loc>https://jithusjacob.github.io/tags/app/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/bloc/</loc>
+    <loc>https://jithusjacob.github.io/tags/bloc/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/books/</loc>
+    <loc>https://jithusjacob.github.io/books/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/dart/</loc>
+    <loc>https://jithusjacob.github.io/tags/dart/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/flutter/</loc>
+    <loc>https://jithusjacob.github.io/tags/flutter/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/sections/flutter/</loc>
+    <loc>https://jithusjacob.github.io/sections/flutter/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/post/flutter_theme_responsive_ui/</loc>
+    <loc>https://jithusjacob.github.io/post/flutter_theme_responsive_ui/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/</loc>
+    <loc>https://jithusjacob.github.io/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/mediaquery/</loc>
+    <loc>https://jithusjacob.github.io/tags/mediaquery/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/post/</loc>
+    <loc>https://jithusjacob.github.io/post/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/books/programming/</loc>
+    <loc>https://jithusjacob.github.io/books/programming/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/sections/</loc>
+    <loc>https://jithusjacob.github.io/sections/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/</loc>
+    <loc>https://jithusjacob.github.io/tags/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/theme/</loc>
+    <loc>https://jithusjacob.github.io/tags/theme/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/post/fluter_ide_with_lua_lsp_neovim_0.5/</loc>
+    <loc>https://jithusjacob.github.io/post/fluter_ide_with_lua_lsp_neovim_0.5/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/ide/</loc>
+    <loc>https://jithusjacob.github.io/tags/ide/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/lsp/</loc>
+    <loc>https://jithusjacob.github.io/tags/lsp/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/lua/</loc>
+    <loc>https://jithusjacob.github.io/tags/lua/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/neovim/</loc>
+    <loc>https://jithusjacob.github.io/tags/neovim/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/windows/</loc>
+    <loc>https://jithusjacob.github.io/tags/windows/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/post/vim_checkbox_lua/</loc>
+    <loc>https://jithusjacob.github.io/post/vim_checkbox_lua/</loc>
     <lastmod>2021-07-31T13:07:21+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/regex/</loc>
+    <loc>https://jithusjacob.github.io/tags/regex/</loc>
     <lastmod>2021-07-31T13:07:21+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/vim/</loc>
+    <loc>https://jithusjacob.github.io/tags/vim/</loc>
     <lastmod>2021-07-31T13:07:21+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/sections/vim/</loc>
+    <loc>https://jithusjacob.github.io/sections/vim/</loc>
     <lastmod>2021-07-31T13:07:21+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/clone-without-folder/</loc>
+    <loc>https://jithusjacob.github.io/tags/clone-without-folder/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/empty-repository/</loc>
+    <loc>https://jithusjacob.github.io/tags/empty-repository/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/git/</loc>
+    <loc>https://jithusjacob.github.io/tags/git/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/sections/git/</loc>
+    <loc>https://jithusjacob.github.io/sections/git/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/orphan-branch/</loc>
+    <loc>https://jithusjacob.github.io/tags/orphan-branch/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/post/dotfiles_using_git_orphan_branches/</loc>
+    <loc>https://jithusjacob.github.io/post/dotfiles_using_git_orphan_branches/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/folding/</loc>
+    <loc>https://jithusjacob.github.io/tags/folding/</loc>
     <lastmod>2021-07-19T16:09:06+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/post/vim_folding/</loc>
+    <loc>https://jithusjacob.github.io/post/vim_folding/</loc>
     <lastmod>2021-07-19T16:09:06+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/coc-nvim/</loc>
+    <loc>https://jithusjacob.github.io/tags/coc-nvim/</loc>
     <lastmod>2021-06-15T15:41:34+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/post/vim_flutter_ide/</loc>
+    <loc>https://jithusjacob.github.io/post/vim_flutter_ide/</loc>
     <lastmod>2021-06-15T15:41:34+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/post/neovim_install/</loc>
+    <loc>https://jithusjacob.github.io/post/neovim_install/</loc>
     <lastmod>2021-06-15T13:10:20+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/git-hub-pages/</loc>
+    <loc>https://jithusjacob.github.io/tags/git-hub-pages/</loc>
     <lastmod>2021-06-14T13:16:19+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/tags/hugo/</loc>
+    <loc>https://jithusjacob.github.io/tags/hugo/</loc>
     <lastmod>2021-06-14T13:16:19+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/sections/hugo/</loc>
+    <loc>https://jithusjacob.github.io/sections/hugo/</loc>
     <lastmod>2021-06-14T13:16:19+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/post/hugo_githubpages_window/</loc>
+    <loc>https://jithusjacob.github.io/post/hugo_githubpages_window/</loc>
     <lastmod>2021-06-14T13:16:19+05:30</lastmod>
   </url>
 </urlset>

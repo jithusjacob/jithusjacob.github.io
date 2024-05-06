@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sections on jsj&#39;s notebook</title>
-    <link>https://example.org/sections/</link>
+    <link>https://jithusjacob.github.io/sections/</link>
     <description>Recent content in Sections on jsj&#39;s notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Aug 2021 10:58:51 +0530</lastBuildDate>
-    <atom:link href="https://example.org/sections/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jithusjacob.github.io/sections/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flutter</title>
-      <link>https://example.org/sections/flutter/</link>
+      <link>https://jithusjacob.github.io/sections/flutter/</link>
       <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
-      <guid>https://example.org/sections/flutter/</guid>
+      <guid>https://jithusjacob.github.io/sections/flutter/</guid>
       <description></description>
     </item>
     <item>
       <title>Vim</title>
-      <link>https://example.org/sections/vim/</link>
+      <link>https://jithusjacob.github.io/sections/vim/</link>
       <pubDate>Sat, 31 Jul 2021 13:07:21 +0530</pubDate>
-      <guid>https://example.org/sections/vim/</guid>
+      <guid>https://jithusjacob.github.io/sections/vim/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://example.org/sections/git/</link>
+      <link>https://jithusjacob.github.io/sections/git/</link>
       <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
-      <guid>https://example.org/sections/git/</guid>
+      <guid>https://jithusjacob.github.io/sections/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>https://example.org/sections/hugo/</link>
+      <link>https://jithusjacob.github.io/sections/hugo/</link>
       <pubDate>Mon, 14 Jun 2021 13:16:19 +0530</pubDate>
-      <guid>https://example.org/sections/hugo/</guid>
+      <guid>https://jithusjacob.github.io/sections/hugo/</guid>
       <description></description>
     </item>
   </channel>
