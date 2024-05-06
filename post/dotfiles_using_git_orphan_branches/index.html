@@ -1,170 +1,432 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Storing Dotfiles on git repository using git orphan branches - jsj&#39;s blog</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="jsj" /><meta name="description" content="So recently Neovim 0.5 version was released with in built LSP(Language Server Protocol) and Lua language support. So I modifed my init.vim with &amp;lsquo;coc-nvim&amp;rsquo; to init.lua and the in built LSP.I want to save both the config files in GitHub.I googled and found that people have dot files repository where they store all the configuration files.So I decided to follow the same approach.I used the git orphan branches to store different configuration files." /><meta name="keywords" content="Hugo, theme, even" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
-
-
-<link rel="canonical" href="http://localhost:1313/post/dotfiles_using_git_orphan_branches/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<link href="/sass/main.min.b874a8796a492f0d7c86bb24c33cbf052935783a5778ebaf819a8e514bf49f10.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="Storing Dotfiles on git repository using git orphan branches" />
-<meta property="og:description" content="So recently Neovim 0.5 version was released with in built LSP(Language Server Protocol) and Lua language support. So I modifed my init.vim with &lsquo;coc-nvim&rsquo; to init.lua and the in built LSP.I want to save both the config files in GitHub.I googled and found that people have dot files repository where they store all the configuration files.So I decided to follow the same approach.I used the git orphan branches to store different configuration files." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/dotfiles_using_git_orphan_branches/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-07-26T10:54:57&#43;05:30" />
-<meta property="article:modified_time" content="2021-07-26T10:54:57&#43;05:30" />
-
-<meta itemprop="name" content="Storing Dotfiles on git repository using git orphan branches">
-<meta itemprop="description" content="So recently Neovim 0.5 version was released with in built LSP(Language Server Protocol) and Lua language support. So I modifed my init.vim with &lsquo;coc-nvim&rsquo; to init.lua and the in built LSP.I want to save both the config files in GitHub.I googled and found that people have dot files repository where they store all the configuration files.So I decided to follow the same approach.I used the git orphan branches to store different configuration files."><meta itemprop="datePublished" content="2021-07-26T10:54:57&#43;05:30" />
-<meta itemprop="dateModified" content="2021-07-26T10:54:57&#43;05:30" />
-<meta itemprop="wordCount" content="410">
-<meta itemprop="keywords" content="Neovim,Git,Windows,Orphan branch,empty repository,clone without folder," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Storing Dotfiles on git repository using git orphan branches"/>
-<meta name="twitter:description" content="So recently Neovim 0.5 version was released with in built LSP(Language Server Protocol) and Lua language support. So I modifed my init.vim with &lsquo;coc-nvim&rsquo; to init.lua and the in built LSP.I want to save both the config files in GitHub.I googled and found that people have dot files repository where they store all the configuration files.So I decided to follow the same approach.I used the git orphan branches to store different configuration files."/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">jsj&#39;s blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">jsj&#39;s blog</a>
-</div>
-
-
-
-
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Storing Dotfiles on git repository using git orphan branches</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2021-07-26 </span>
-        <div class="post-category">
-            <a href="/categories/neovim/"> Neovim </a>
-            <a href="/categories/git/"> Git </a>
-            <a href="/categories/windows/"> Windows </a>
-            </div>
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storing Dotfiles on git repository using git orphan branches</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="text/javascript" src="/js/custom.js" defer></script>
+  </head>
+  <body>
+    <div class="menu_icon_box" onclick="toggleSideBar(this)">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <div class="wrapper">
+      <div class="header">
+        <h3 class="header_heading">Notes</h3>
       </div>
-    </header>
 
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
+      <aside class="sidebar">
+  <nav>
+    <h3 class="sidebar_heading">Note Books</h3>
+
+    
+    
+      
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+      
+      
+    
+
+    
+      <ul class="books">
         <li>
-          <ul>
-            <li><a href="#creating-a-empty-dotfile-repository">Creating a empty dotfile repository</a></li>
-            <li><a href="#clone-the-empty-repository-without-folder">Clone the empty repository without folder</a></li>
-            <li><a href="#creating-the-first-orphan-git-branch">Creating the first Orphan git branch</a></li>
-            <li><a href="#repeating-the-above-steps-for-second-orphan-branch">Repeating the above steps for second orphan branch</a></li>
-          </ul>
+          <a
+            data-level-id="programming"
+            data-level-class="books"
+            onclick="downLevel(this)"
+            href="#!">
+            Programming
+          </a>
         </li>
       </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>So recently Neovim 0.5 version was released with in built LSP(Language Server
+      <ul class="sections" id="programming">
+        <li>
+          <a
+            href="#!"
+            data-parent-class="books"
+            data-level-class="sections"
+            onclick="upLevel(this)"
+            >&lt;&lt;</a
+          >
+        </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="flutterprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Flutter</a
+            >
+          </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="vimprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Vim</a
+            >
+          </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="Gitprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Git</a
+            >
+          </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="hugoprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Hugo</a
+            >
+          </li>
+        
+
+      </ul>
+    
+
+    
+      
+        
+        <ul class="pages" id="flutterprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Flutter theme and responsive UI"
+                      href="/post/flutter_theme_responsive_ui/"
+                      >Flutter theme and responsive UI</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Fluter IDE with Neovim 0.5 ,built in LSP and lua on windows"
+                      href="/post/fluter_ide_with_lua_lsp_neovim_0.5/"
+                      >Fluter IDE with Neovim 0.5 ,built in LSP and lua on windows</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Setup Vim as a Flutter IDE using coc-nvim on windows"
+                      href="/post/vim_flutter_ide/"
+                      >Setup Vim as a Flutter IDE using coc-nvim on windows</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+
+          
+
+        </ul>
+      
+        
+        <ul class="pages" id="vimprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Creating Vim binding for checkbox using regex for lua configuration"
+                      href="/post/vim_checkbox_lua/"
+                      >Creating Vim binding for checkbox using regex for lua configuration</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Vim folding to arrange NeoVim config file"
+                      href="/post/vim_folding/"
+                      >Vim folding to arrange NeoVim config file</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Install Neovim on Windows"
+                      href="/post/neovim_install/"
+                      >Install Neovim on Windows</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+
+          
+
+        </ul>
+      
+        
+        <ul class="pages" id="Gitprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Storing Dotfiles on git repository using git orphan branches"
+                      href="/post/dotfiles_using_git_orphan_branches/"
+                      >Storing Dotfiles on git repository using git orphan branches</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+
+          
+
+        </ul>
+      
+        
+        <ul class="pages" id="hugoprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Hugo with Git Hub Pages on Windows"
+                      href="/post/hugo_githubpages_window/"
+                      >Hugo with Git Hub Pages on Windows</a
+                    >
+                  </li>
+                
+              
+            
+
+          
+
+        </ul>
+      
+    
+
+  </nav>
+</aside>
+
+      <main class="content">
+        
+  <h2>Storing Dotfiles on git repository using git orphan branches</h2>
+  <span class="date">
+    26 Jul 2021
+  </span>
+  <p>So recently Neovim 0.5 version was released with in built LSP(Language Server
 Protocol) and Lua language support. So I modifed my <code>init.vim</code> with &lsquo;coc-nvim&rsquo;
 to <code>init.lua</code> and the in built LSP.I want to save both the config files in
 GitHub.I googled and found that people have dot files repository where they
@@ -174,76 +436,32 @@ independent of each other and can be tracked separately.</p>
 <h3 id="creating-a-empty-dotfile-repository">Creating a empty dotfile repository</h3>
 <p>I created the empty dotfile GitHub repository without a README.md file.
 Then used the below commands to create a emtpy Github repository.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">git init
+<pre tabindex="0"><code>git init
 git commit --allow-empty
 git branch -M main
 git remote add origin https://github.com/jithusjacob/dotfiles.git
 git push -u origin main
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="clone-the-empty-repository-without-folder">Clone the empty repository without folder</h3>
+</code></pre><h3 id="clone-the-empty-repository-without-folder">Clone the empty repository without folder</h3>
 <p>So now the empty GitHub repository is ready. I will clone it to my new Neovim
 configuration folder without the dotfiles folder using the below commands</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">git init
-git remote add origin https://github.com/jithusjacob/dotfiles.git 
-</code></pre></td></tr></table>
-</div>
-</div><p>If there no files in the existing folder we can also used the below command</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone https://github.com/jithusjacob/dotfiles.git .
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="creating-the-first-orphan-git-branch">Creating the first Orphan git branch</h3>
-<p>An orphan branch is a branch which starts with a  different root commit.So it
+<pre tabindex="0"><code>git init
+git remote add origin https://github.com/jithusjacob/dotfiles.git
+</code></pre><p>If there no files in the existing folder we can also used the below command</p>
+<pre tabindex="0"><code>git clone https://github.com/jithusjacob/dotfiles.git .
+</code></pre><h3 id="creating-the-first-orphan-git-branch">Creating the first Orphan git branch</h3>
+<p>An orphan branch is a branch which starts with a different root commit.So it
 will not have any history when created and the first commit in this branch will
 be the root of this branch.So this branch will be a independent branch without
 any relation to any of the available branches.So lets create the new orphan
 branch using the below Commands</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">git checkout --orphan nvim_lsp_lua
+<pre tabindex="0"><code>git checkout --orphan nvim_lsp_lua
 nvim README.md
 git add .
 git commit -m &#34;Initial Commit&#34;
 git push origin nvim_lsp_lua
-</code></pre></td></tr></table>
-</div>
-</div><p>So now if I want to clone these files I can use the below command</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone --branch nvim_lsp_lua https://github.com/jithusjacob/dotfiles.git .
-</code></pre></td></tr></table>
-</div>
-</div><p>Some other commands that might be required  are as below <br>
+</code></pre><p>So now if I want to clone these files I can use the below command</p>
+<pre tabindex="0"><code>git clone --branch nvim_lsp_lua https://github.com/jithusjacob/dotfiles.git .
+</code></pre><p>Some other commands that might be required are as below<br>
 <strong>git push -d origin &lt;branch_name&gt;</strong> &ndash; To delete a branch from remote<br>
 <strong>git branch -r</strong> &ndash; To list the branches<br>
 <strong>git branch</strong> &ndash; To check the current branch</p>
@@ -255,104 +473,12 @@ orphan branch for that.</p>
 <p>You can also see the above steps in my youtube video</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube-nocookie.com/embed/QqRKUYUMcxY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Hugo with Git Hub Pages on Windows"></iframe>
+  <iframe src="https://www.youtube.com/embed/QqRKUYUMcxY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Hugo with Git Hub Pages on Windows"></iframe>
 </div>
 
 
+
+      </main>
     </div>
-
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">jsj</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">
-        2021-07-26
-        
-    </span>
-  </p>
-  
-  
-</div>
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/neovim/">Neovim</a>
-          <a href="/tags/git/">Git</a>
-          <a href="/tags/windows/">Windows</a>
-          <a href="/tags/orphan-branch/">Orphan branch</a>
-          <a href="/tags/empty-repository/">empty repository</a>
-          <a href="/tags/clone-without-folder/">clone without folder</a>
-          </div>
-      <nav class="post-nav">
-        <a class="prev" href="/post/vim_checkbox_lua/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Creating Vim binding for checkbox using regex for lua configuration</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/vim_folding/">
-            <span class="next-text nav-default">Vim folding to arrange NeoVim config file</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-
-  
-
-  
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>jsj</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
-
-
-
-
-
-
-
-
-</body>
+  </body>
 </html>

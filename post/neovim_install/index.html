@@ -1,203 +1,444 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Install Neovim on Windows - jsj&#39;s blog</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="jsj" /><meta name="description" content="I had wanted to use vim as my editor for a long time.So in the lockdown time I gave it a try.I installed NeoVim on windows.Below are the steps for that
-Install Neovim using chocolatey So I use chocolatey package manager for installing different software on windows.I installed the Neovim also using chocolatey with the below command. Ensure you use the terminal with Run as administrator.
-1  choco install neovim   Setting up init." /><meta name="keywords" content="Hugo, theme, even" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
-
-
-<link rel="canonical" href="http://localhost:1313/post/neovim_install/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<link href="/sass/main.min.b874a8796a492f0d7c86bb24c33cbf052935783a5778ebaf819a8e514bf49f10.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="Install Neovim on Windows" />
-<meta property="og:description" content="I had wanted to use vim as my editor for a long time.So in the lockdown time I gave it a try.I installed NeoVim on windows.Below are the steps for that
-Install Neovim using chocolatey So I use chocolatey package manager for installing different software on windows.I installed the Neovim also using chocolatey with the below command. Ensure you use the terminal with Run as administrator.
-1  choco install neovim   Setting up init." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/neovim_install/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-06-15T13:10:20&#43;05:30" />
-<meta property="article:modified_time" content="2021-06-15T13:10:20&#43;05:30" />
-
-<meta itemprop="name" content="Install Neovim on Windows">
-<meta itemprop="description" content="I had wanted to use vim as my editor for a long time.So in the lockdown time I gave it a try.I installed NeoVim on windows.Below are the steps for that
-Install Neovim using chocolatey So I use chocolatey package manager for installing different software on windows.I installed the Neovim also using chocolatey with the below command. Ensure you use the terminal with Run as administrator.
-1  choco install neovim   Setting up init."><meta itemprop="datePublished" content="2021-06-15T13:10:20&#43;05:30" />
-<meta itemprop="dateModified" content="2021-06-15T13:10:20&#43;05:30" />
-<meta itemprop="wordCount" content="251">
-<meta itemprop="keywords" content="Vim,Windows,NeoVim," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Install Neovim on Windows"/>
-<meta name="twitter:description" content="I had wanted to use vim as my editor for a long time.So in the lockdown time I gave it a try.I installed NeoVim on windows.Below are the steps for that
-Install Neovim using chocolatey So I use chocolatey package manager for installing different software on windows.I installed the Neovim also using chocolatey with the below command. Ensure you use the terminal with Run as administrator.
-1  choco install neovim   Setting up init."/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">jsj&#39;s blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">jsj&#39;s blog</a>
-</div>
-
-
-
-
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Install Neovim on Windows</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2021-06-15 </span>
-        <div class="post-category">
-            <a href="/categories/vim/"> Vim </a>
-            <a href="/categories/windows/"> Windows </a>
-            <a href="/categories/neovim/"> NeoVim </a>
-            </div>
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Install Neovim on Windows</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="text/javascript" src="/js/custom.js" defer></script>
+  </head>
+  <body>
+    <div class="menu_icon_box" onclick="toggleSideBar(this)">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <div class="wrapper">
+      <div class="header">
+        <h3 class="header_heading">Notes</h3>
       </div>
-    </header>
 
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
+      <aside class="sidebar">
+  <nav>
+    <h3 class="sidebar_heading">Note Books</h3>
+
+    
+    
+      
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+      
+      
+    
+
+    
+      <ul class="books">
         <li>
-          <ul>
-            <li><a href="#install-neovim-using-chocolatey">Install Neovim using chocolatey</a></li>
-            <li><a href="#setting-up-initvim">Setting up init.vim</a></li>
-            <li><a href="#plugin-manager">Plugin manager</a></li>
-          </ul>
+          <a
+            data-level-id="programming"
+            data-level-class="books"
+            onclick="downLevel(this)"
+            href="#!">
+            Programming
+          </a>
         </li>
       </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>I had wanted to use vim as my editor for a long time.So in the lockdown time I
+      <ul class="sections" id="programming">
+        <li>
+          <a
+            href="#!"
+            data-parent-class="books"
+            data-level-class="sections"
+            onclick="upLevel(this)"
+            >&lt;&lt;</a
+          >
+        </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="flutterprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Flutter</a
+            >
+          </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="vimprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Vim</a
+            >
+          </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="Gitprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Git</a
+            >
+          </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="hugoprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Hugo</a
+            >
+          </li>
+        
+
+      </ul>
+    
+
+    
+      
+        
+        <ul class="pages" id="flutterprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Flutter theme and responsive UI"
+                      href="/post/flutter_theme_responsive_ui/"
+                      >Flutter theme and responsive UI</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Fluter IDE with Neovim 0.5 ,built in LSP and lua on windows"
+                      href="/post/fluter_ide_with_lua_lsp_neovim_0.5/"
+                      >Fluter IDE with Neovim 0.5 ,built in LSP and lua on windows</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Setup Vim as a Flutter IDE using coc-nvim on windows"
+                      href="/post/vim_flutter_ide/"
+                      >Setup Vim as a Flutter IDE using coc-nvim on windows</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+
+          
+
+        </ul>
+      
+        
+        <ul class="pages" id="vimprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Creating Vim binding for checkbox using regex for lua configuration"
+                      href="/post/vim_checkbox_lua/"
+                      >Creating Vim binding for checkbox using regex for lua configuration</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Vim folding to arrange NeoVim config file"
+                      href="/post/vim_folding/"
+                      >Vim folding to arrange NeoVim config file</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Install Neovim on Windows"
+                      href="/post/neovim_install/"
+                      >Install Neovim on Windows</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+
+          
+
+        </ul>
+      
+        
+        <ul class="pages" id="Gitprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Storing Dotfiles on git repository using git orphan branches"
+                      href="/post/dotfiles_using_git_orphan_branches/"
+                      >Storing Dotfiles on git repository using git orphan branches</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+
+          
+
+        </ul>
+      
+        
+        <ul class="pages" id="hugoprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Hugo with Git Hub Pages on Windows"
+                      href="/post/hugo_githubpages_window/"
+                      >Hugo with Git Hub Pages on Windows</a
+                    >
+                  </li>
+                
+              
+            
+
+          
+
+        </ul>
+      
+    
+
+  </nav>
+</aside>
+
+      <main class="content">
+        
+  <h2>Install Neovim on Windows</h2>
+  <span class="date">
+    15 Jun 2021
+  </span>
+  <p>I had wanted to use vim as my editor for a long time.So in the lockdown time I
 gave it a try.I installed NeoVim on windows.Below are the steps for that</p>
 <h3 id="install-neovim-using-chocolatey">Install Neovim using chocolatey</h3>
 <p>So I use chocolatey package manager for installing different software on
 windows.I installed the Neovim also using chocolatey with the below command.
 Ensure you use the terminal with <code>Run as administrator</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">choco install neovim
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="setting-up-initvim">Setting up init.vim</h3>
+<pre tabindex="0"><code>choco install neovim
+</code></pre><h3 id="setting-up-initvim">Setting up init.vim</h3>
 <p>After installing Neovim .I needed to setup the <code>init.vim</code> for different Neovim
 configurations.To find the location where Neovim looks for <code>init.vim</code> give the
 below command in Neovim</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">:echo stdpath(&#39;config&#39;)
-</code></pre></td></tr></table>
-</div>
-</div><p>So my setup directory is <code>C:\Users\jithu\AppData\Local\nvim</code>. So here I created
+<pre tabindex="0"><code>:echo stdpath(&#39;config&#39;)
+</code></pre><p>So my setup directory is <code>C:\Users\jithu\AppData\Local\nvim</code>. So here I created
 a file <code>init.vim</code></p>
 <h3 id="plugin-manager">Plugin manager</h3>
 <p>After setting up <code>init.vim</code> I installed the <a href="https://github.com/junegunn/vim-plug">vim-plug</a>
@@ -206,19 +447,10 @@ directory where <code>init.vim</code> is present.Inside the folder I added the p
 file from <a href="https://github.com/junegunn/vim-plug">vim-plug</a> Git repository.</p>
 <p>Now to install plugins using vim-plug plugin manager,we need to give the below
 lines in <code>init.vim</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">call plug#begin(&#39;~/AppData/Local/nvim/plugged&#39;)
+<pre tabindex="0"><code>call plug#begin(&#39;~/AppData/Local/nvim/plugged&#39;)
 Plug &#39;jiangmiao/auto-pairs&#39;
 call plug#end()
-</code></pre></td></tr></table>
-</div>
-</div><p>Here we have specified the directory for plugins as <code>plugged</code> folder where
+</code></pre><p>Here we have specified the directory for plugins as <code>plugged</code> folder where
 init.vim exits.We can give the list of plugins between the two call commands
 using <code>Plug</code> command.Next we reloaded <code>init.vim</code> and used <code>:PlugInstall</code> to
 install the plugins.Similarly if you need to delete the plugin then remove the
@@ -227,101 +459,12 @@ plugin.</p>
 <p>You can find the youtube video for the above steps below</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube-nocookie.com/embed/-Zio2BeVFQs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Install Neovim on Windows"></iframe>
+  <iframe src="https://www.youtube.com/embed/-Zio2BeVFQs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Install Neovim on Windows"></iframe>
 </div>
 
 
+
+      </main>
     </div>
-
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">jsj</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">
-        2021-06-15
-        
-    </span>
-  </p>
-  
-  
-</div>
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/vim/">Vim</a>
-          <a href="/tags/windows/">Windows</a>
-          <a href="/tags/neovim/">NeoVim</a>
-          </div>
-      <nav class="post-nav">
-        <a class="prev" href="/post/vim_flutter_ide/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Setup Vim as a Flutter IDE using coc-nvim on windows</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/hugo_githubpages_window/">
-            <span class="next-text nav-default">Hugo with Git Hub Pages on Windows</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-
-  
-
-  
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>jsj</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
-
-
-
-
-
-
-
-
-</body>
+  </body>
 </html>

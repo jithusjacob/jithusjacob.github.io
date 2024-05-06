@@ -1,200 +1,159 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on jsj&#39;s blog</title>
-    <link>http://localhost:1313/tags/</link>
-    <description>Recent content in Tags on jsj&#39;s blog</description>
+    <title>Tags on jsj&#39;s notebook</title>
+    <link>https://example.org/tags/</link>
+    <description>Recent content in Tags on jsj&#39;s notebook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 30 Aug 2021 10:58:51 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Aug 2021 10:58:51 +0530</lastBuildDate>
+    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>App</title>
-      <link>http://localhost:1313/tags/app/</link>
+      <link>https://example.org/tags/app/</link>
       <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/app/</guid>
+      <guid>https://example.org/tags/app/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bloc</title>
-      <link>http://localhost:1313/tags/bloc/</link>
+      <title>Bloc</title>
+      <link>https://example.org/tags/bloc/</link>
       <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/bloc/</guid>
+      <guid>https://example.org/tags/bloc/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dart</title>
-      <link>http://localhost:1313/tags/dart/</link>
+      <title>Dart</title>
+      <link>https://example.org/tags/dart/</link>
       <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/dart/</guid>
+      <guid>https://example.org/tags/dart/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Flutter</title>
-      <link>http://localhost:1313/tags/flutter/</link>
+      <link>https://example.org/tags/flutter/</link>
       <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/flutter/</guid>
+      <guid>https://example.org/tags/flutter/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>MediaQuery</title>
-      <link>http://localhost:1313/tags/mediaquery/</link>
+      <link>https://example.org/tags/mediaquery/</link>
       <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/mediaquery/</guid>
+      <guid>https://example.org/tags/mediaquery/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Theme</title>
-      <link>http://localhost:1313/tags/theme/</link>
+      <link>https://example.org/tags/theme/</link>
       <pubDate>Mon, 30 Aug 2021 10:58:51 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/theme/</guid>
+      <guid>https://example.org/tags/theme/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>IDE</title>
-      <link>http://localhost:1313/tags/ide/</link>
+      <link>https://example.org/tags/ide/</link>
       <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/ide/</guid>
+      <guid>https://example.org/tags/ide/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>LSP</title>
-      <link>http://localhost:1313/tags/lsp/</link>
+      <link>https://example.org/tags/lsp/</link>
       <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/lsp/</guid>
+      <guid>https://example.org/tags/lsp/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>lua</title>
-      <link>http://localhost:1313/tags/lua/</link>
+      <title>Lua</title>
+      <link>https://example.org/tags/lua/</link>
       <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/lua/</guid>
+      <guid>https://example.org/tags/lua/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Neovim</title>
-      <link>http://localhost:1313/tags/neovim/</link>
+      <title>NeoVim</title>
+      <link>https://example.org/tags/neovim/</link>
       <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/neovim/</guid>
+      <guid>https://example.org/tags/neovim/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
+      <link>https://example.org/tags/windows/</link>
       <pubDate>Mon, 02 Aug 2021 09:49:50 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/windows/</guid>
+      <guid>https://example.org/tags/windows/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>regex</title>
-      <link>http://localhost:1313/tags/regex/</link>
+      <title>Regex</title>
+      <link>https://example.org/tags/regex/</link>
       <pubDate>Sat, 31 Jul 2021 13:07:21 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/regex/</guid>
+      <guid>https://example.org/tags/regex/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Vim</title>
-      <link>http://localhost:1313/tags/vim/</link>
+      <link>https://example.org/tags/vim/</link>
       <pubDate>Sat, 31 Jul 2021 13:07:21 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/vim/</guid>
+      <guid>https://example.org/tags/vim/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>clone without folder</title>
-      <link>http://localhost:1313/tags/clone-without-folder/</link>
+      <title>Clone Without Folder</title>
+      <link>https://example.org/tags/clone-without-folder/</link>
       <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/clone-without-folder/</guid>
+      <guid>https://example.org/tags/clone-without-folder/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>empty repository</title>
-      <link>http://localhost:1313/tags/empty-repository/</link>
+      <title>Empty Repository</title>
+      <link>https://example.org/tags/empty-repository/</link>
       <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/empty-repository/</guid>
+      <guid>https://example.org/tags/empty-repository/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Git</title>
-      <link>http://localhost:1313/tags/git/</link>
+      <link>https://example.org/tags/git/</link>
       <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/git/</guid>
+      <guid>https://example.org/tags/git/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Orphan branch</title>
-      <link>http://localhost:1313/tags/orphan-branch/</link>
+      <title>Orphan Branch</title>
+      <link>https://example.org/tags/orphan-branch/</link>
       <pubDate>Mon, 26 Jul 2021 10:54:57 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/orphan-branch/</guid>
+      <guid>https://example.org/tags/orphan-branch/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Folding</title>
-      <link>http://localhost:1313/tags/folding/</link>
+      <link>https://example.org/tags/folding/</link>
       <pubDate>Mon, 19 Jul 2021 16:09:06 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/folding/</guid>
+      <guid>https://example.org/tags/folding/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>coc-nvim</title>
-      <link>http://localhost:1313/tags/coc-nvim/</link>
+      <title>Coc-Nvim</title>
+      <link>https://example.org/tags/coc-nvim/</link>
       <pubDate>Tue, 15 Jun 2021 15:41:34 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/coc-nvim/</guid>
+      <guid>https://example.org/tags/coc-nvim/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Git Hub Pages</title>
-      <link>http://localhost:1313/tags/git-hub-pages/</link>
+      <link>https://example.org/tags/git-hub-pages/</link>
       <pubDate>Mon, 14 Jun 2021 13:16:19 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/git-hub-pages/</guid>
+      <guid>https://example.org/tags/git-hub-pages/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hugo</title>
-      <link>http://localhost:1313/tags/hugo/</link>
+      <link>https://example.org/tags/hugo/</link>
       <pubDate>Mon, 14 Jun 2021 13:16:19 +0530</pubDate>
-      
-      <guid>http://localhost:1313/tags/hugo/</guid>
+      <guid>https://example.org/tags/hugo/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

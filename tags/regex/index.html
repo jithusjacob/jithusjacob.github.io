@@ -1,199 +1,470 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>regex · jsj&#39;s blog</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="jsj" /><meta name="description" content="jsj&#39;s personal blog" /><meta name="keywords" content="Hugo, theme, even" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
-
-
-<link rel="canonical" href="http://localhost:1313/tags/regex/" />
-  <link href="http://localhost:1313/tags/regex/index.xml" rel="alternate" type="application/rss+xml" title="jsj&#39;s blog" />
-  <link href="http://localhost:1313/tags/regex/index.xml" rel="feed" type="application/rss+xml" title="jsj&#39;s blog" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<link href="/sass/main.min.b874a8796a492f0d7c86bb24c33cbf052935783a5778ebaf819a8e514bf49f10.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="regex" />
-<meta property="og:description" content="jsj&#39;s personal blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/tags/regex/" />
-
-<meta itemprop="name" content="regex">
-<meta itemprop="description" content="jsj&#39;s personal blog"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="regex"/>
-<meta name="twitter:description" content="jsj&#39;s personal blog"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">jsj&#39;s blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">jsj&#39;s blog</a>
-</div>
-
-
-
-
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <section id="archive" class="archive">
-  <div class="archive-title tag">
-        <h2 class="archive-name">regex</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regex</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="text/javascript" src="/js/custom.js" defer></script>
+  </head>
+  <body>
+    <div class="menu_icon_box" onclick="toggleSideBar(this)">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <div class="wrapper">
+      <div class="header">
+        <h3 class="header_heading">Notes</h3>
       </div>
 
-  <div class="archive-post">
-      <span class="archive-post-time">
-        2021-07-31
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/vim_checkbox_lua/" class="archive-post-link">
-          Creating Vim binding for checkbox using regex for lua configuration
-        </a>
-      </span>
-    </div>
-</section>
+      <aside class="sidebar">
+  <nav>
+    <h3 class="sidebar_heading">Note Books</h3>
 
-<nav class="pagination">
-  
-  
-</nav>
-        </div>
+    
+    
+      
+      
+        
+          
         
 
-      </div>
-    </main>
+      
+        
+          
+        
 
-    <footer id="footer" class="footer">
-      <div class="social-links">
-  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
+      
+        
+          
+        
 
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
+      
+        
+          
+        
 
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+        
+          
+        
+
+      
+      
+      
+    
+
+    
+      <ul class="books">
+        <li>
+          <a
+            data-level-id="programming"
+            data-level-class="books"
+            onclick="downLevel(this)"
+            href="#!">
+            Programming
+          </a>
+        </li>
+      </ul>
+      <ul class="sections" id="programming">
+        <li>
+          <a
+            href="#!"
+            data-parent-class="books"
+            data-level-class="sections"
+            onclick="upLevel(this)"
+            >&lt;&lt;</a
+          >
+        </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="flutterprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Flutter</a
+            >
+          </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="vimprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Vim</a
+            >
+          </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="Gitprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Git</a
+            >
+          </li>
+        
+          
+
+
+          <li>
+            <a
+              data-level-id="hugoprogramming"
+              data-level-class="sections"
+              onclick="downLevel(this)"
+              href="#!"
+              >Hugo</a
+            >
+          </li>
+        
+
+      </ul>
+    
+
+    
+      
+        
+        <ul class="pages" id="flutterprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Flutter theme and responsive UI"
+                      href="/post/flutter_theme_responsive_ui/"
+                      >Flutter theme and responsive UI</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Fluter IDE with Neovim 0.5 ,built in LSP and lua on windows"
+                      href="/post/fluter_ide_with_lua_lsp_neovim_0.5/"
+                      >Fluter IDE with Neovim 0.5 ,built in LSP and lua on windows</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Setup Vim as a Flutter IDE using coc-nvim on windows"
+                      href="/post/vim_flutter_ide/"
+                      >Setup Vim as a Flutter IDE using coc-nvim on windows</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+
+          
+
+        </ul>
+      
+        
+        <ul class="pages" id="vimprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Creating Vim binding for checkbox using regex for lua configuration"
+                      href="/post/vim_checkbox_lua/"
+                      >Creating Vim binding for checkbox using regex for lua configuration</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Vim folding to arrange NeoVim config file"
+                      href="/post/vim_folding/"
+                      >Vim folding to arrange NeoVim config file</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Install Neovim on Windows"
+                      href="/post/neovim_install/"
+                      >Install Neovim on Windows</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+
+          
+
+        </ul>
+      
+        
+        <ul class="pages" id="Gitprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Storing Dotfiles on git repository using git orphan branches"
+                      href="/post/dotfiles_using_git_orphan_branches/"
+                      >Storing Dotfiles on git repository using git orphan branches</a
+                    >
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+
+          
+
+        </ul>
+      
+        
+        <ul class="pages" id="hugoprogramming">
+          <li>
+            <a
+              href="#!"
+              data-parent-id="programming"
+              data-level-class="pages"
+              onclick="upLevel2(this)"
+              >&lt;&lt;</a
+            >
+          </li>
+          
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <li>
+                    <a
+                      data-level-id="Hugo with Git Hub Pages on Windows"
+                      href="/post/hugo_githubpages_window/"
+                      >Hugo with Git Hub Pages on Windows</a
+                    >
+                  </li>
+                
+              
+            
+
+          
+
+        </ul>
+      
+    
+
+  </nav>
+</aside>
+
+      <main class="content">
+        
+  
+    <a href="https://example.org/post/flutter_theme_responsive_ui/">Flutter theme and responsive UI</a>
+    <p class="intro">Introduction In the flutter application I am creating I need a single place where the app theme can be added which will reflect in the whole application.This includes color,font size and other look and feel elements.This is so if any changes are required in the UI. It can be easily done at a single place.Also the text size and position of other elements should be dynamic based on the screen size for a responsive UI.</p>
+    <br />
+  
+    <a href="https://example.org/post/fluter_ide_with_lua_lsp_neovim_0.5/">Fluter IDE with Neovim 0.5 ,built in LSP and lua on windows</a>
+    <p class="intro">Introduction So I recently upgraded to NeoVim 0.5 stable release.This release has a inbuilt LSP(Language server protocol) which is a client to LSP servers.It also includes a Lua framework for building enhanced LSP tools.
+I used coc-nvim earlier as LSP client to interact with Dart LSP server which it does automatically using coc-flutter extension.If you want to know how to do that read my previous blog post for more details.</p>
+    <br />
+  
+    <a href="https://example.org/post/vim_checkbox_lua/">Creating Vim binding for checkbox using regex for lua configuration</a>
+    <p class="intro">So I have todo list in my vim notes and I wanted to create vim bindings to create checkbox ,close checkbox,open checkbox.I found a article by marcelfischer which had a similar requirement.He had used regex to do so.I decided to do the same for my lua configuration.
+Requirement If there is item with * then we need to add a checkbox
+* todo item 1 * will change into
+* [ ]todo item 1 * [ ] If there is checkbox we should be able to close the same</p>
+    <br />
+  
+    <a href="https://example.org/post/dotfiles_using_git_orphan_branches/">Storing Dotfiles on git repository using git orphan branches</a>
+    <p class="intro">So recently Neovim 0.5 version was released with in built LSP(Language Server Protocol) and Lua language support. So I modifed my init.vim with &lsquo;coc-nvim&rsquo; to init.lua and the in built LSP.I want to save both the config files in GitHub.I googled and found that people have dot files repository where they store all the configuration files.So I decided to follow the same approach.I used the git orphan branches to store different configuration files.</p>
+    <br />
+  
+    <a href="https://example.org/post/vim_folding/">Vim folding to arrange NeoVim config file</a>
+    <p class="intro">Folding in vim I have started using NeoVim as my editor.So I have added lot of configurations in my init.vim file.I keep updating the same when I find some new requirements. So I wanted to manage all the configurations related to NeoVim and its Plugins. I checked various ways and found that folding was one of the methods to do that.Folding is a way of collapsing a group of lines into a single line.</p>
+    <br />
+  
+    <a href="https://example.org/post/vim_flutter_ide/">Setup Vim as a Flutter IDE using coc-nvim on windows</a>
+    <p class="intro">I recently started using Neovim as my text editor.Also right now I am learning Flutter to create a mobile application for my personal project. So I decided to setup Neovim as a Flutter IDE.With this I can practice Vim with Flutter.
+Install Plugins To setup Neovim as Flutter IDE we need to use coc.nvim plugin .Also for formatting, I am using the dart_vim_plugin.We also need the snippets to be loaded like the ones for stateless/stateful widget.</p>
+    <br />
+  
+    <a href="https://example.org/post/neovim_install/">Install Neovim on Windows</a>
+    <p class="intro">I had wanted to use vim as my editor for a long time.So in the lockdown time I gave it a try.I installed NeoVim on windows.Below are the steps for that
+Install Neovim using chocolatey So I use chocolatey package manager for installing different software on windows.I installed the Neovim also using chocolatey with the below command. Ensure you use the terminal with Run as administrator.
+choco install neovim Setting up init.</p>
+    <br />
+  
+    <a href="https://example.org/post/hugo_githubpages_window/">Hugo with Git Hub Pages on Windows</a>
+    <p class="intro">I created this blog using Hugo and Git Hub Pages on windows.Hugo is a static site generator.Its very fast and written in Go language.Git Hub Pages lets you host the static sites created using Hugo.
+Installing Hugo First install Hugo on windows.I used the chocolatey package manager to install Hugo on windows.There are two versions available to install.I installed the extended version as it is required if you plan to customize the themes you will be using.</p>
+    <br />
   
 
-  <span class="copyright-year">
-    &copy; 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>jsj</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
+      </main>
     </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
-
-
-
-
-
-
-
-
-</body>
+  </body>
 </html>

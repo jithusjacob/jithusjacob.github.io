@@ -1,333 +1,122 @@
-<?xml-stylesheet type="text/xsl" href="http://localhost:1313/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/about/</loc>
-    <lastmod>2021-06-15T21:38:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/app/</loc>
+    <loc>https://example.org/tags/app/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/app/</loc>
+  </url><url>
+    <loc>https://example.org/tags/bloc/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/bloc/</loc>
+  </url><url>
+    <loc>https://example.org/books/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>https://example.org/tags/dart/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/dart/</loc>
+  </url><url>
+    <loc>https://example.org/tags/flutter/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/dart/</loc>
+  </url><url>
+    <loc>https://example.org/sections/flutter/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/flutter/</loc>
+  </url><url>
+    <loc>https://example.org/post/flutter_theme_responsive_ui/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/flutter/</loc>
+  </url><url>
+    <loc>https://example.org/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/flutter_theme_responsive_ui/</loc>
+  </url><url>
+    <loc>https://example.org/tags/mediaquery/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/</loc>
+  </url><url>
+    <loc>https://example.org/post/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/mediaquery/</loc>
+  </url><url>
+    <loc>https://example.org/books/programming/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/</loc>
+  </url><url>
+    <loc>https://example.org/sections/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>https://example.org/tags/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/theme/</loc>
+  </url><url>
+    <loc>https://example.org/tags/theme/</loc>
     <lastmod>2021-08-30T10:58:51+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/fluter_ide_with_lua_lsp_neovim_0.5/</loc>
+  </url><url>
+    <loc>https://example.org/post/fluter_ide_with_lua_lsp_neovim_0.5/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/ide/</loc>
+  </url><url>
+    <loc>https://example.org/tags/ide/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/ide/</loc>
+  </url><url>
+    <loc>https://example.org/tags/lsp/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/lsp/</loc>
+  </url><url>
+    <loc>https://example.org/tags/lua/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/lua/</loc>
+  </url><url>
+    <loc>https://example.org/tags/neovim/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/lua/</loc>
+  </url><url>
+    <loc>https://example.org/tags/windows/</loc>
     <lastmod>2021-08-02T09:49:50+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/neovim/</loc>
-    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/neovim/</loc>
-    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/windows/</loc>
-    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/windows/</loc>
-    <lastmod>2021-08-02T09:49:50+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/vim_checkbox_lua/</loc>
+  </url><url>
+    <loc>https://example.org/post/vim_checkbox_lua/</loc>
     <lastmod>2021-07-31T13:07:21+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/regex/</loc>
+  </url><url>
+    <loc>https://example.org/tags/regex/</loc>
     <lastmod>2021-07-31T13:07:21+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/regex/</loc>
+  </url><url>
+    <loc>https://example.org/tags/vim/</loc>
     <lastmod>2021-07-31T13:07:21+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/vim/</loc>
+  </url><url>
+    <loc>https://example.org/sections/vim/</loc>
     <lastmod>2021-07-31T13:07:21+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/vim/</loc>
-    <lastmod>2021-07-31T13:07:21+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/clone-without-folder/</loc>
+  </url><url>
+    <loc>https://example.org/tags/clone-without-folder/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/empty-repository/</loc>
+  </url><url>
+    <loc>https://example.org/tags/empty-repository/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/git/</loc>
+  </url><url>
+    <loc>https://example.org/tags/git/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/git/</loc>
+  </url><url>
+    <loc>https://example.org/sections/git/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/orphan-branch/</loc>
+  </url><url>
+    <loc>https://example.org/tags/orphan-branch/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/dotfiles_using_git_orphan_branches/</loc>
+  </url><url>
+    <loc>https://example.org/post/dotfiles_using_git_orphan_branches/</loc>
     <lastmod>2021-07-26T10:54:57+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/folding/</loc>
+  </url><url>
+    <loc>https://example.org/tags/folding/</loc>
     <lastmod>2021-07-19T16:09:06+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/folding/</loc>
+  </url><url>
+    <loc>https://example.org/post/vim_folding/</loc>
     <lastmod>2021-07-19T16:09:06+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/vim_folding/</loc>
-    <lastmod>2021-07-19T16:09:06+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/coc-nvim/</loc>
+  </url><url>
+    <loc>https://example.org/tags/coc-nvim/</loc>
     <lastmod>2021-06-15T15:41:34+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/vim_flutter_ide/</loc>
+  </url><url>
+    <loc>https://example.org/post/vim_flutter_ide/</loc>
     <lastmod>2021-06-15T15:41:34+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/neovim_install/</loc>
+  </url><url>
+    <loc>https://example.org/post/neovim_install/</loc>
     <lastmod>2021-06-15T13:10:20+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/git-hub-pages/</loc>
+  </url><url>
+    <loc>https://example.org/tags/git-hub-pages/</loc>
     <lastmod>2021-06-14T13:16:19+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
+  </url><url>
+    <loc>https://example.org/tags/hugo/</loc>
     <lastmod>2021-06-14T13:16:19+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/hugo/</loc>
+  </url><url>
+    <loc>https://example.org/sections/hugo/</loc>
     <lastmod>2021-06-14T13:16:19+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/hugo_githubpages_window/</loc>
+  </url><url>
+    <loc>https://example.org/post/hugo_githubpages_window/</loc>
     <lastmod>2021-06-14T13:16:19+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/initial_post/</loc>
-    <lastmod>2021-06-13T23:04:40+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
 </urlset>
